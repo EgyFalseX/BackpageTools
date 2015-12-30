@@ -14,6 +14,8 @@ namespace BackpageTools
         UI.Code.ProxyUC docProxyCtr = new UI.Code.ProxyUC();
         UI.Code.LoginInfoUC docLoginInfoCtr = new UI.Code.LoginInfoUC();
         UI.Code.PostListUC docPostListCtr = new UI.Code.PostListUC();
+        UI.Code.CityUC docCityCtr = new UI.Code.CityUC();
+        UI.Code.CategoryUC docCategoryCtr = new UI.Code.CategoryUC();
 
         public FormMain()
         {
@@ -53,6 +55,14 @@ namespace BackpageTools
             {
                 e.Control = docPostListCtr;
             }
+            else if (e.Document.ControlName == "CityUC")
+            {
+                e.Control = docCityCtr;
+            }
+            else if (e.Document.ControlName == "CategoryUC")
+            {
+                e.Control = docCategoryCtr;
+            }
         }
 
         private void bbiProxy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -70,5 +80,16 @@ namespace BackpageTools
             docPostListCtr = new UI.Code.PostListUC();
             ActivateDoc(docPostListCtr.Name, e.Item.Caption, e.Item.Glyph);
         }
+        private void bbiCity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            docCityCtr = new UI.Code.CityUC();
+            ActivateDoc(docCityCtr.Name, e.Item.Caption, e.Item.Glyph);
+        }
+        private void bbiCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            docCategoryCtr = new UI.Code.CategoryUC();
+            ActivateDoc(docCategoryCtr.Name, e.Item.Caption, e.Item.Glyph);
+        }
+
     }
 }

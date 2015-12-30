@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\dsQry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsQry.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +80,24 @@
     </Compile>
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Code\CityUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Code\CityUC.designer.cs">
+      <DependentUpon>CityUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Code\CategoryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Code\CategoryUC.designer.cs">
+      <DependentUpon>CategoryUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Code\HeaderUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Code\HeaderUC.designer.cs">
+      <DependentUpon>HeaderUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Code\LoginPostUC.cs">
       <SubType>Form</SubType>
@@ -106,6 +129,12 @@
     <Compile Include="UI\dlg\AddListDlg.designer.cs">
       <DependentUpon>AddListDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\dlg\AddListPostDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\dlg\AddListPostDlg.designer.cs">
+      <DependentUpon>AddListPostDlg.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +152,18 @@
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Code\CityUC.resx">
+      <DependentUpon>CityUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Code\CategoryUC.resx">
+      <DependentUpon>CategoryUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Code\HeaderUC.resx">
+      <DependentUpon>HeaderUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Code\LoginPostUC.resx">
+      <DependentUpon>LoginPostUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Code\PostListUC.resx">
       <DependentUpon>PostListUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +176,9 @@
     <EmbeddedResource Include="UI\dlg\AddListDlg.resx">
       <DependentUpon>AddListDlg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\dlg\AddListPostDlg.resx">
+      <DependentUpon>AddListPostDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Datasource\dsData.xsc">
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -146,6 +190,17 @@
     </None>
     <None Include="Datasource\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\dsQry.xsc">
+      <DependentUpon>dsQry.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\dsQry.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsQry.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\dsQry.xss">
+      <DependentUpon>dsQry.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -162,6 +217,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="db.mdb" />
+    <None Include="Resources\editname_16x16.png" />
+    <None Include="Resources\boemployee_32x32.png" />
+    <None Include="Resources\boemployee_16x16.png" />
+    <None Include="Resources\bolocalization_32x32.png" />
+    <None Include="Resources\bolocalization_16x16.png" />
     <None Include="Resources\openhyperlink_32x32.png" />
     <None Include="Resources\openhyperlink_16x16.png" />
     <None Include="Resources\contact_32x32.png" />

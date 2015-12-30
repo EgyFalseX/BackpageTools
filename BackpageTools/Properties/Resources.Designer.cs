@@ -93,6 +93,46 @@ namespace BackpageTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boemployee_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("boemployee_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boemployee_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("boemployee_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bolocalization_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("bolocalization_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bolocalization_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("bolocalization_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_16x16 {
             get {
                 object obj = ResourceManager.GetObject("cancel_16x16", resourceCulture);
@@ -116,6 +156,16 @@ namespace BackpageTools.Properties {
         internal static System.Drawing.Bitmap contact_32x32 {
             get {
                 object obj = ResourceManager.GetObject("contact_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editname_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("editname_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

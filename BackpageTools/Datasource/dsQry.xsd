@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsQry" targetNamespace="http://tempuri.org/dsQry.xsd" xmlns:mstns="http://tempuri.org/dsQry.xsd" xmlns="http://tempuri.org/dsQry.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbConnectionString (Settings)" PropertyReference="ApplicationSettings.BackpageTools.Properties.Settings.GlobalReference.Default.dbConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="QryCategoryTableAdapter" GeneratorDataComponentClassName="QryCategoryTableAdapter" Name="QryCategory" UserDataComponentName="QryCategoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbConnectionString (Settings)" DbObjectName="Category" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CatAutoId, [Section], SectionId, Category, CategoryId
+,[Category].[Section] &amp; " - " &amp; [Category].[Category] AS [Text]
+FROM            Category
+
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CatAutoId" DataSetColumn="CatAutoId" />
+              <Mapping SourceColumn="Section" DataSetColumn="Section" />
+              <Mapping SourceColumn="SectionId" DataSetColumn="SectionId" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="CategoryId" DataSetColumn="CategoryId" />
+              <Mapping SourceColumn="Text" DataSetColumn="Text" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsQry" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsQry" msprop:Generator_UserDSName="dsQry">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="QryCategory" msprop:Generator_TableClassName="QryCategoryDataTable" msprop:Generator_TableVarName="tableQryCategory" msprop:Generator_TablePropName="QryCategory" msprop:Generator_RowDeletingName="QryCategoryRowDeleting" msprop:Generator_RowChangingName="QryCategoryRowChanging" msprop:Generator_RowEvHandlerName="QryCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="QryCategoryRowDeleted" msprop:Generator_UserTableName="QryCategory" msprop:Generator_RowChangedName="QryCategoryRowChanged" msprop:Generator_RowEvArgName="QryCategoryRowChangeEvent" msprop:Generator_RowClassName="QryCategoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CatAutoId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCatAutoId" msprop:Generator_ColumnPropNameInRow="CatAutoId" msprop:Generator_ColumnPropNameInTable="CatAutoIdColumn" msprop:Generator_UserColumnName="CatAutoId" type="xs:int" />
+              <xs:element name="Section" msprop:Generator_ColumnVarNameInTable="columnSection" msprop:Generator_ColumnPropNameInRow="Section" msprop:Generator_ColumnPropNameInTable="SectionColumn" msprop:Generator_UserColumnName="Section" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SectionId" msprop:Generator_ColumnVarNameInTable="columnSectionId" msprop:Generator_ColumnPropNameInRow="SectionId" msprop:Generator_ColumnPropNameInTable="SectionIdColumn" msprop:Generator_UserColumnName="SectionId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CategoryId" msprop:Generator_ColumnVarNameInTable="columnCategoryId" msprop:Generator_ColumnPropNameInRow="CategoryId" msprop:Generator_ColumnPropNameInTable="CategoryIdColumn" msprop:Generator_UserColumnName="CategoryId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Text" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnText" msprop:Generator_ColumnPropNameInRow="Text" msprop:Generator_ColumnPropNameInTable="TextColumn" msprop:Generator_UserColumnName="Text" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:QryCategory" />
+      <xs:field xpath="mstns:CatAutoId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiProxy = new DevExpress.XtraBars.BarButtonItem();
             this.bbiLoginInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPostList = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCity = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCode = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupCode = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedViewMain = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
-            this.bbiPostList = new DevExpress.XtraBars.BarButtonItem();
+            this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedViewMain = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.bbiCategory = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedViewMain)).BeginInit();
@@ -48,9 +51,11 @@
             this.ribbonControlMain.ExpandCollapseItem,
             this.bbiProxy,
             this.bbiLoginInfo,
-            this.bbiPostList});
+            this.bbiPostList,
+            this.bbiCity,
+            this.bbiCategory});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControlMain.MaxItemId = 4;
+            this.ribbonControlMain.MaxItemId = 6;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageCode});
@@ -77,6 +82,26 @@
             this.bbiLoginInfo.Name = "bbiLoginInfo";
             this.bbiLoginInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiLoginInfo_ItemClick);
             // 
+            // bbiPostList
+            // 
+            this.bbiPostList.Caption = "Posts List";
+            this.bbiPostList.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiPostList.Glyph = global::BackpageTools.Properties.Resources.openhyperlink_16x16;
+            this.bbiPostList.Id = 3;
+            this.bbiPostList.LargeGlyph = global::BackpageTools.Properties.Resources.openhyperlink_32x32;
+            this.bbiPostList.Name = "bbiPostList";
+            this.bbiPostList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPostList_ItemClick);
+            // 
+            // bbiCity
+            // 
+            this.bbiCity.Caption = "City";
+            this.bbiCity.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiCity.Glyph = global::BackpageTools.Properties.Resources.bolocalization_16x16;
+            this.bbiCity.Id = 4;
+            this.bbiCity.LargeGlyph = global::BackpageTools.Properties.Resources.bolocalization_32x32;
+            this.bbiCity.Name = "bbiCity";
+            this.bbiCity.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCity_ItemClick);
+            // 
             // ribbonPageCode
             // 
             this.ribbonPageCode.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -89,6 +114,8 @@
             this.ribbonPageGroupCode.ItemLinks.Add(this.bbiProxy);
             this.ribbonPageGroupCode.ItemLinks.Add(this.bbiLoginInfo);
             this.ribbonPageGroupCode.ItemLinks.Add(this.bbiPostList);
+            this.ribbonPageGroupCode.ItemLinks.Add(this.bbiCity);
+            this.ribbonPageGroupCode.ItemLinks.Add(this.bbiCategory);
             this.ribbonPageGroupCode.Name = "ribbonPageGroupCode";
             this.ribbonPageGroupCode.Text = "Code";
             // 
@@ -104,15 +131,15 @@
             // 
             this.tabbedViewMain.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.tabbedViewMain_QueryControl);
             // 
-            // bbiPostList
+            // bbiCategory
             // 
-            this.bbiPostList.Caption = "Posts List";
-            this.bbiPostList.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiPostList.Glyph = global::BackpageTools.Properties.Resources.openhyperlink_16x16;
-            this.bbiPostList.Id = 3;
-            this.bbiPostList.LargeGlyph = global::BackpageTools.Properties.Resources.openhyperlink_32x32;
-            this.bbiPostList.Name = "bbiPostList";
-            this.bbiPostList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPostList_ItemClick);
+            this.bbiCategory.Caption = "Category";
+            this.bbiCategory.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiCategory.Glyph = global::BackpageTools.Properties.Resources.boemployee_16x16;
+            this.bbiCategory.Id = 5;
+            this.bbiCategory.LargeGlyph = global::BackpageTools.Properties.Resources.boemployee_32x32;
+            this.bbiCategory.Name = "bbiCategory";
+            this.bbiCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCategory_ItemClick);
             // 
             // FormMain
             // 
@@ -143,6 +170,8 @@
         private DevExpress.XtraBars.BarButtonItem bbiProxy;
         private DevExpress.XtraBars.BarButtonItem bbiLoginInfo;
         private DevExpress.XtraBars.BarButtonItem bbiPostList;
+        private DevExpress.XtraBars.BarButtonItem bbiCity;
+        private DevExpress.XtraBars.BarButtonItem bbiCategory;
     }
 }
 
