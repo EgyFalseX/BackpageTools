@@ -11,11 +11,13 @@ namespace BackpageTools
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        UI.Code.ProxyUC docProxyCtr = new UI.Code.ProxyUC();
-        UI.Code.LoginInfoUC docLoginInfoCtr = new UI.Code.LoginInfoUC();
-        UI.Code.PostListUC docPostListCtr = new UI.Code.PostListUC();
-        UI.Code.CityUC docCityCtr = new UI.Code.CityUC();
-        UI.Code.CategoryUC docCategoryCtr = new UI.Code.CategoryUC();
+        UI.Code.ProxyUC docProxyCtr;
+        UI.Code.LoginInfoUC docLoginInfoCtr;
+        UI.Code.PostListUC docPostListCtr;
+        UI.Code.CityUC docCityCtr;
+        UI.Code.CategoryItemUC docCategoryItemCtr;
+        UI.Code.PostEditorUC docPostsCtr;
+        UI.Code.MailUC docMailCtr;
 
         public FormMain()
         {
@@ -59,9 +61,17 @@ namespace BackpageTools
             {
                 e.Control = docCityCtr;
             }
-            else if (e.Document.ControlName == "CategoryUC")
+            else if (e.Document.ControlName == "CategoryItemUC")
             {
-                e.Control = docCategoryCtr;
+                e.Control = docCategoryItemCtr;
+            }
+            else if (e.Document.ControlName == "PostEditorUC")
+            {
+                e.Control = docPostsCtr;
+            }
+            else if (e.Document.ControlName == "MailUC")
+            {
+                e.Control = docMailCtr;
             }
         }
 
@@ -85,10 +95,20 @@ namespace BackpageTools
             docCityCtr = new UI.Code.CityUC();
             ActivateDoc(docCityCtr.Name, e.Item.Caption, e.Item.Glyph);
         }
-        private void bbiCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiCategoryItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            docCategoryCtr = new UI.Code.CategoryUC();
-            ActivateDoc(docCategoryCtr.Name, e.Item.Caption, e.Item.Glyph);
+            docCategoryItemCtr = new UI.Code.CategoryItemUC();
+            ActivateDoc(docCategoryItemCtr.Name, e.Item.Caption, e.Item.Glyph);
+        }
+        private void bbiPosts_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            docPostsCtr = new UI.Code.PostEditorUC();
+            ActivateDoc(docPostsCtr.Name, e.Item.Caption, e.Item.Glyph);
+        }
+        private void bbiMail_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            docMailCtr = new UI.Code.MailUC();
+            ActivateDoc(docMailCtr.Name, e.Item.Caption, e.Item.Glyph);
         }
 
     }

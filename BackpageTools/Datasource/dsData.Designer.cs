@@ -38,29 +38,21 @@ namespace BackpageTools.Datasource {
         
         private CategoryDataTable tableCategory;
         
-        private HeaderDataTable tableHeader;
+        private PostsDataTable tablePosts;
         
-        private BodyDataTable tableBody;
+        private PostPartTypeDataTable tablePostPartType;
         
-        private FooterDataTable tableFooter;
+        private MailDataTable tableMail;
         
-        private HeaderCategoryDataTable tableHeaderCategory;
+        private CategoryItemDataTable tableCategoryItem;
         
-        private BodyCategoryDataTable tableBodyCategory;
-        
-        private FooterCategoryDataTable tableFooterCategory;
+        private PostCategoryDataTable tablePostCategory;
         
         private global::System.Data.DataRelation relationCategoryHeaderCategory;
         
+        private global::System.Data.DataRelation relationCategoryItemPostCategory;
+        
         private global::System.Data.DataRelation relationHeaderHeaderCategory;
-        
-        private global::System.Data.DataRelation relationBodyBodyCategory;
-        
-        private global::System.Data.DataRelation relationCategoryBodyCategory;
-        
-        private global::System.Data.DataRelation relationCategoryFooterCategory;
-        
-        private global::System.Data.DataRelation relationFooterFooterCategory;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -111,23 +103,20 @@ namespace BackpageTools.Datasource {
                 if ((ds.Tables["Category"] != null)) {
                     base.Tables.Add(new CategoryDataTable(ds.Tables["Category"]));
                 }
-                if ((ds.Tables["Header"] != null)) {
-                    base.Tables.Add(new HeaderDataTable(ds.Tables["Header"]));
+                if ((ds.Tables["Posts"] != null)) {
+                    base.Tables.Add(new PostsDataTable(ds.Tables["Posts"]));
                 }
-                if ((ds.Tables["Body"] != null)) {
-                    base.Tables.Add(new BodyDataTable(ds.Tables["Body"]));
+                if ((ds.Tables["PostPartType"] != null)) {
+                    base.Tables.Add(new PostPartTypeDataTable(ds.Tables["PostPartType"]));
                 }
-                if ((ds.Tables["Footer"] != null)) {
-                    base.Tables.Add(new FooterDataTable(ds.Tables["Footer"]));
+                if ((ds.Tables["Mail"] != null)) {
+                    base.Tables.Add(new MailDataTable(ds.Tables["Mail"]));
                 }
-                if ((ds.Tables["HeaderCategory"] != null)) {
-                    base.Tables.Add(new HeaderCategoryDataTable(ds.Tables["HeaderCategory"]));
+                if ((ds.Tables["CategoryItem"] != null)) {
+                    base.Tables.Add(new CategoryItemDataTable(ds.Tables["CategoryItem"]));
                 }
-                if ((ds.Tables["BodyCategory"] != null)) {
-                    base.Tables.Add(new BodyCategoryDataTable(ds.Tables["BodyCategory"]));
-                }
-                if ((ds.Tables["FooterCategory"] != null)) {
-                    base.Tables.Add(new FooterCategoryDataTable(ds.Tables["FooterCategory"]));
+                if ((ds.Tables["PostCategory"] != null)) {
+                    base.Tables.Add(new PostCategoryDataTable(ds.Tables["PostCategory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -221,9 +210,9 @@ namespace BackpageTools.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HeaderDataTable Header {
+        public PostsDataTable Posts {
             get {
-                return this.tableHeader;
+                return this.tablePosts;
             }
         }
         
@@ -231,9 +220,9 @@ namespace BackpageTools.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BodyDataTable Body {
+        public PostPartTypeDataTable PostPartType {
             get {
-                return this.tableBody;
+                return this.tablePostPartType;
             }
         }
         
@@ -241,9 +230,9 @@ namespace BackpageTools.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FooterDataTable Footer {
+        public MailDataTable Mail {
             get {
-                return this.tableFooter;
+                return this.tableMail;
             }
         }
         
@@ -251,9 +240,9 @@ namespace BackpageTools.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HeaderCategoryDataTable HeaderCategory {
+        public CategoryItemDataTable CategoryItem {
             get {
-                return this.tableHeaderCategory;
+                return this.tableCategoryItem;
             }
         }
         
@@ -261,19 +250,9 @@ namespace BackpageTools.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BodyCategoryDataTable BodyCategory {
+        public PostCategoryDataTable PostCategory {
             get {
-                return this.tableBodyCategory;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FooterCategoryDataTable FooterCategory {
-            get {
-                return this.tableFooterCategory;
+                return this.tablePostCategory;
             }
         }
         
@@ -365,23 +344,20 @@ namespace BackpageTools.Datasource {
                 if ((ds.Tables["Category"] != null)) {
                     base.Tables.Add(new CategoryDataTable(ds.Tables["Category"]));
                 }
-                if ((ds.Tables["Header"] != null)) {
-                    base.Tables.Add(new HeaderDataTable(ds.Tables["Header"]));
+                if ((ds.Tables["Posts"] != null)) {
+                    base.Tables.Add(new PostsDataTable(ds.Tables["Posts"]));
                 }
-                if ((ds.Tables["Body"] != null)) {
-                    base.Tables.Add(new BodyDataTable(ds.Tables["Body"]));
+                if ((ds.Tables["PostPartType"] != null)) {
+                    base.Tables.Add(new PostPartTypeDataTable(ds.Tables["PostPartType"]));
                 }
-                if ((ds.Tables["Footer"] != null)) {
-                    base.Tables.Add(new FooterDataTable(ds.Tables["Footer"]));
+                if ((ds.Tables["Mail"] != null)) {
+                    base.Tables.Add(new MailDataTable(ds.Tables["Mail"]));
                 }
-                if ((ds.Tables["HeaderCategory"] != null)) {
-                    base.Tables.Add(new HeaderCategoryDataTable(ds.Tables["HeaderCategory"]));
+                if ((ds.Tables["CategoryItem"] != null)) {
+                    base.Tables.Add(new CategoryItemDataTable(ds.Tables["CategoryItem"]));
                 }
-                if ((ds.Tables["BodyCategory"] != null)) {
-                    base.Tables.Add(new BodyCategoryDataTable(ds.Tables["BodyCategory"]));
-                }
-                if ((ds.Tables["FooterCategory"] != null)) {
-                    base.Tables.Add(new FooterCategoryDataTable(ds.Tables["FooterCategory"]));
+                if ((ds.Tables["PostCategory"] != null)) {
+                    base.Tables.Add(new PostCategoryDataTable(ds.Tables["PostCategory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -458,48 +434,39 @@ namespace BackpageTools.Datasource {
                     this.tableCategory.InitVars();
                 }
             }
-            this.tableHeader = ((HeaderDataTable)(base.Tables["Header"]));
+            this.tablePosts = ((PostsDataTable)(base.Tables["Posts"]));
             if ((initTable == true)) {
-                if ((this.tableHeader != null)) {
-                    this.tableHeader.InitVars();
+                if ((this.tablePosts != null)) {
+                    this.tablePosts.InitVars();
                 }
             }
-            this.tableBody = ((BodyDataTable)(base.Tables["Body"]));
+            this.tablePostPartType = ((PostPartTypeDataTable)(base.Tables["PostPartType"]));
             if ((initTable == true)) {
-                if ((this.tableBody != null)) {
-                    this.tableBody.InitVars();
+                if ((this.tablePostPartType != null)) {
+                    this.tablePostPartType.InitVars();
                 }
             }
-            this.tableFooter = ((FooterDataTable)(base.Tables["Footer"]));
+            this.tableMail = ((MailDataTable)(base.Tables["Mail"]));
             if ((initTable == true)) {
-                if ((this.tableFooter != null)) {
-                    this.tableFooter.InitVars();
+                if ((this.tableMail != null)) {
+                    this.tableMail.InitVars();
                 }
             }
-            this.tableHeaderCategory = ((HeaderCategoryDataTable)(base.Tables["HeaderCategory"]));
+            this.tableCategoryItem = ((CategoryItemDataTable)(base.Tables["CategoryItem"]));
             if ((initTable == true)) {
-                if ((this.tableHeaderCategory != null)) {
-                    this.tableHeaderCategory.InitVars();
+                if ((this.tableCategoryItem != null)) {
+                    this.tableCategoryItem.InitVars();
                 }
             }
-            this.tableBodyCategory = ((BodyCategoryDataTable)(base.Tables["BodyCategory"]));
+            this.tablePostCategory = ((PostCategoryDataTable)(base.Tables["PostCategory"]));
             if ((initTable == true)) {
-                if ((this.tableBodyCategory != null)) {
-                    this.tableBodyCategory.InitVars();
-                }
-            }
-            this.tableFooterCategory = ((FooterCategoryDataTable)(base.Tables["FooterCategory"]));
-            if ((initTable == true)) {
-                if ((this.tableFooterCategory != null)) {
-                    this.tableFooterCategory.InitVars();
+                if ((this.tablePostCategory != null)) {
+                    this.tablePostCategory.InitVars();
                 }
             }
             this.relationCategoryHeaderCategory = this.Relations["CategoryHeaderCategory"];
+            this.relationCategoryItemPostCategory = this.Relations["CategoryItemPostCategory"];
             this.relationHeaderHeaderCategory = this.Relations["HeaderHeaderCategory"];
-            this.relationBodyBodyCategory = this.Relations["BodyBodyCategory"];
-            this.relationCategoryBodyCategory = this.Relations["CategoryBodyCategory"];
-            this.relationCategoryFooterCategory = this.Relations["CategoryFooterCategory"];
-            this.relationFooterFooterCategory = this.Relations["FooterFooterCategory"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -524,42 +491,28 @@ namespace BackpageTools.Datasource {
             base.Tables.Add(this.tableCity);
             this.tableCategory = new CategoryDataTable();
             base.Tables.Add(this.tableCategory);
-            this.tableHeader = new HeaderDataTable();
-            base.Tables.Add(this.tableHeader);
-            this.tableBody = new BodyDataTable();
-            base.Tables.Add(this.tableBody);
-            this.tableFooter = new FooterDataTable();
-            base.Tables.Add(this.tableFooter);
-            this.tableHeaderCategory = new HeaderCategoryDataTable();
-            base.Tables.Add(this.tableHeaderCategory);
-            this.tableBodyCategory = new BodyCategoryDataTable();
-            base.Tables.Add(this.tableBodyCategory);
-            this.tableFooterCategory = new FooterCategoryDataTable();
-            base.Tables.Add(this.tableFooterCategory);
+            this.tablePosts = new PostsDataTable();
+            base.Tables.Add(this.tablePosts);
+            this.tablePostPartType = new PostPartTypeDataTable();
+            base.Tables.Add(this.tablePostPartType);
+            this.tableMail = new MailDataTable();
+            base.Tables.Add(this.tableMail);
+            this.tableCategoryItem = new CategoryItemDataTable();
+            base.Tables.Add(this.tableCategoryItem);
+            this.tablePostCategory = new PostCategoryDataTable();
+            base.Tables.Add(this.tablePostCategory);
             this.relationCategoryHeaderCategory = new global::System.Data.DataRelation("CategoryHeaderCategory", new global::System.Data.DataColumn[] {
                         this.tableCategory.CatAutoIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHeaderCategory.CatAutoIdColumn}, false);
+                        this.tablePostCategory.CategoryItemIdColumn}, false);
             this.Relations.Add(this.relationCategoryHeaderCategory);
+            this.relationCategoryItemPostCategory = new global::System.Data.DataRelation("CategoryItemPostCategory", new global::System.Data.DataColumn[] {
+                        this.tableCategoryItem.CategoryItemIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePostCategory.CategoryItemIdColumn}, false);
+            this.Relations.Add(this.relationCategoryItemPostCategory);
             this.relationHeaderHeaderCategory = new global::System.Data.DataRelation("HeaderHeaderCategory", new global::System.Data.DataColumn[] {
-                        this.tableHeader.HeaderAutoIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHeaderCategory.HeaderAutoIdColumn}, false);
+                        this.tablePosts.PostAutoIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePostCategory.PostAutoIdColumn}, false);
             this.Relations.Add(this.relationHeaderHeaderCategory);
-            this.relationBodyBodyCategory = new global::System.Data.DataRelation("BodyBodyCategory", new global::System.Data.DataColumn[] {
-                        this.tableBody.BodyAutoIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBodyCategory.BodyAutoIdColumn}, false);
-            this.Relations.Add(this.relationBodyBodyCategory);
-            this.relationCategoryBodyCategory = new global::System.Data.DataRelation("CategoryBodyCategory", new global::System.Data.DataColumn[] {
-                        this.tableCategory.CatAutoIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBodyCategory.CatAutoIdColumn}, false);
-            this.Relations.Add(this.relationCategoryBodyCategory);
-            this.relationCategoryFooterCategory = new global::System.Data.DataRelation("CategoryFooterCategory", new global::System.Data.DataColumn[] {
-                        this.tableCategory.CatAutoIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableFooterCategory.CatAutoIdColumn}, false);
-            this.Relations.Add(this.relationCategoryFooterCategory);
-            this.relationFooterFooterCategory = new global::System.Data.DataRelation("FooterFooterCategory", new global::System.Data.DataColumn[] {
-                        this.tableFooter.FooterAutoIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableFooterCategory.FooterAutoIdColumn}, false);
-            this.Relations.Add(this.relationFooterFooterCategory);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -606,37 +559,31 @@ namespace BackpageTools.Datasource {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeHeader() {
+        private bool ShouldSerializePosts() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeBody() {
+        private bool ShouldSerializePostPartType() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFooter() {
+        private bool ShouldSerializeMail() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeHeaderCategory() {
+        private bool ShouldSerializeCategoryItem() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeBodyCategory() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFooterCategory() {
+        private bool ShouldSerializePostCategory() {
             return false;
         }
         
@@ -717,22 +664,19 @@ namespace BackpageTools.Datasource {
         public delegate void CategoryRowChangeEventHandler(object sender, CategoryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void HeaderRowChangeEventHandler(object sender, HeaderRowChangeEvent e);
+        public delegate void PostsRowChangeEventHandler(object sender, PostsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void BodyRowChangeEventHandler(object sender, BodyRowChangeEvent e);
+        public delegate void PostPartTypeRowChangeEventHandler(object sender, PostPartTypeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FooterRowChangeEventHandler(object sender, FooterRowChangeEvent e);
+        public delegate void MailRowChangeEventHandler(object sender, MailRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void HeaderCategoryRowChangeEventHandler(object sender, HeaderCategoryRowChangeEvent e);
+        public delegate void CategoryItemRowChangeEventHandler(object sender, CategoryItemRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void BodyCategoryRowChangeEventHandler(object sender, BodyCategoryRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FooterCategoryRowChangeEventHandler(object sender, FooterCategoryRowChangeEvent e);
+        public delegate void PostCategoryRowChangeEventHandler(object sender, PostCategoryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1031,9 +975,9 @@ namespace BackpageTools.Datasource {
             
             private global::System.Data.DataColumn columnPostListAutoId;
             
-            private global::System.Data.DataColumn columnCategory;
-            
             private global::System.Data.DataColumn columnPostLink;
+            
+            private global::System.Data.DataColumn columnCategoryItemId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1078,17 +1022,17 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CategoryColumn {
+            public global::System.Data.DataColumn PostLinkColumn {
                 get {
-                    return this.columnCategory;
+                    return this.columnPostLink;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PostLinkColumn {
+            public global::System.Data.DataColumn CategoryItemIdColumn {
                 get {
-                    return this.columnPostLink;
+                    return this.columnCategoryItemId;
                 }
             }
             
@@ -1129,12 +1073,12 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PostListRow AddPostListRow(string Category, string PostLink) {
+            public PostListRow AddPostListRow(string PostLink, int CategoryItemId) {
                 PostListRow rowPostListRow = ((PostListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Category,
-                        PostLink};
+                        PostLink,
+                        CategoryItemId};
                 rowPostListRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPostListRow);
                 return rowPostListRow;
@@ -1165,8 +1109,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnPostListAutoId = base.Columns["PostListAutoId"];
-                this.columnCategory = base.Columns["Category"];
                 this.columnPostLink = base.Columns["PostLink"];
+                this.columnCategoryItemId = base.Columns["CategoryItemId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1174,10 +1118,10 @@ namespace BackpageTools.Datasource {
             private void InitClass() {
                 this.columnPostListAutoId = new global::System.Data.DataColumn("PostListAutoId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPostListAutoId);
-                this.columnCategory = new global::System.Data.DataColumn("Category", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCategory);
                 this.columnPostLink = new global::System.Data.DataColumn("PostLink", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPostLink);
+                this.columnCategoryItemId = new global::System.Data.DataColumn("CategoryItemId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoryItemId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPostListAutoId}, true));
                 this.columnPostListAutoId.AutoIncrement = true;
@@ -1185,7 +1129,6 @@ namespace BackpageTools.Datasource {
                 this.columnPostListAutoId.AutoIncrementStep = -1;
                 this.columnPostListAutoId.AllowDBNull = false;
                 this.columnPostListAutoId.Unique = true;
-                this.columnCategory.MaxLength = 255;
                 this.columnPostLink.MaxLength = 255;
             }
             
@@ -2772,16 +2715,18 @@ namespace BackpageTools.Datasource {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HeaderDataTable : global::System.Data.TypedTableBase<HeaderRow> {
+        public partial class PostsDataTable : global::System.Data.TypedTableBase<PostsRow> {
             
-            private global::System.Data.DataColumn columnHeaderAutoId;
+            private global::System.Data.DataColumn columnPostAutoId;
             
-            private global::System.Data.DataColumn columnHeader;
+            private global::System.Data.DataColumn columnPostText;
+            
+            private global::System.Data.DataColumn columnPostPartTypeId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderDataTable() {
-                this.TableName = "Header";
+            public PostsDataTable() {
+                this.TableName = "Posts";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2789,7 +2734,7 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HeaderDataTable(global::System.Data.DataTable table) {
+            internal PostsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2806,24 +2751,32 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected HeaderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PostsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HeaderAutoIdColumn {
+            public global::System.Data.DataColumn PostAutoIdColumn {
                 get {
-                    return this.columnHeaderAutoId;
+                    return this.columnPostAutoId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HeaderColumn {
+            public global::System.Data.DataColumn PostTextColumn {
                 get {
-                    return this.columnHeader;
+                    return this.columnPostText;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PostPartTypeIdColumn {
+                get {
+                    return this.columnPostPartTypeId;
                 }
             }
             
@@ -2838,53 +2791,54 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderRow this[int index] {
+            public PostsRow this[int index] {
                 get {
-                    return ((HeaderRow)(this.Rows[index]));
+                    return ((PostsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderRowChangeEventHandler HeaderRowChanging;
+            public event PostsRowChangeEventHandler PostsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderRowChangeEventHandler HeaderRowChanged;
+            public event PostsRowChangeEventHandler PostsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderRowChangeEventHandler HeaderRowDeleting;
+            public event PostsRowChangeEventHandler PostsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderRowChangeEventHandler HeaderRowDeleted;
+            public event PostsRowChangeEventHandler PostsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddHeaderRow(HeaderRow row) {
+            public void AddPostsRow(PostsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderRow AddHeaderRow(int HeaderAutoId, string Header) {
-                HeaderRow rowHeaderRow = ((HeaderRow)(this.NewRow()));
+            public PostsRow AddPostsRow(int PostAutoId, string PostText, int PostPartTypeId) {
+                PostsRow rowPostsRow = ((PostsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        HeaderAutoId,
-                        Header};
-                rowHeaderRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHeaderRow);
-                return rowHeaderRow;
+                        PostAutoId,
+                        PostText,
+                        PostPartTypeId};
+                rowPostsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPostsRow);
+                return rowPostsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderRow FindByHeaderAutoId(int HeaderAutoId) {
-                return ((HeaderRow)(this.Rows.Find(new object[] {
-                            HeaderAutoId})));
+            public PostsRow FindByPostAutoId(int PostAutoId) {
+                return ((PostsRow)(this.Rows.Find(new object[] {
+                            PostAutoId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                HeaderDataTable cln = ((HeaderDataTable)(base.Clone()));
+                PostsDataTable cln = ((PostsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2892,54 +2846,57 @@ namespace BackpageTools.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new HeaderDataTable();
+                return new PostsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnHeaderAutoId = base.Columns["HeaderAutoId"];
-                this.columnHeader = base.Columns["Header"];
+                this.columnPostAutoId = base.Columns["PostAutoId"];
+                this.columnPostText = base.Columns["PostText"];
+                this.columnPostPartTypeId = base.Columns["PostPartTypeId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnHeaderAutoId = new global::System.Data.DataColumn("HeaderAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHeaderAutoId);
-                this.columnHeader = new global::System.Data.DataColumn("Header", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHeader);
+                this.columnPostAutoId = new global::System.Data.DataColumn("PostAutoId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostAutoId);
+                this.columnPostText = new global::System.Data.DataColumn("PostText", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostText);
+                this.columnPostPartTypeId = new global::System.Data.DataColumn("PostPartTypeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostPartTypeId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnHeaderAutoId}, true));
-                this.columnHeaderAutoId.AllowDBNull = false;
-                this.columnHeaderAutoId.Unique = true;
-                this.columnHeader.MaxLength = 536870910;
+                                this.columnPostAutoId}, true));
+                this.columnPostAutoId.AllowDBNull = false;
+                this.columnPostAutoId.Unique = true;
+                this.columnPostText.MaxLength = 536870910;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderRow NewHeaderRow() {
-                return ((HeaderRow)(this.NewRow()));
+            public PostsRow NewPostsRow() {
+                return ((PostsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HeaderRow(builder);
+                return new PostsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(HeaderRow);
+                return typeof(PostsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.HeaderRowChanged != null)) {
-                    this.HeaderRowChanged(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
+                if ((this.PostsRowChanged != null)) {
+                    this.PostsRowChanged(this, new PostsRowChangeEvent(((PostsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2947,8 +2904,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.HeaderRowChanging != null)) {
-                    this.HeaderRowChanging(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
+                if ((this.PostsRowChanging != null)) {
+                    this.PostsRowChanging(this, new PostsRowChangeEvent(((PostsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2956,8 +2913,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.HeaderRowDeleted != null)) {
-                    this.HeaderRowDeleted(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
+                if ((this.PostsRowDeleted != null)) {
+                    this.PostsRowDeleted(this, new PostsRowChangeEvent(((PostsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2965,14 +2922,14 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.HeaderRowDeleting != null)) {
-                    this.HeaderRowDeleting(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
+                if ((this.PostsRowDeleting != null)) {
+                    this.PostsRowDeleting(this, new PostsRowChangeEvent(((PostsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveHeaderRow(HeaderRow row) {
+            public void RemovePostsRow(PostsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2999,7 +2956,7 @@ namespace BackpageTools.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HeaderDataTable";
+                attribute2.FixedValue = "PostsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3045,16 +3002,16 @@ namespace BackpageTools.Datasource {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BodyDataTable : global::System.Data.TypedTableBase<BodyRow> {
+        public partial class PostPartTypeDataTable : global::System.Data.TypedTableBase<PostPartTypeRow> {
             
-            private global::System.Data.DataColumn columnBodyAutoId;
+            private global::System.Data.DataColumn columnPostPartTypeId;
             
-            private global::System.Data.DataColumn columnBody;
+            private global::System.Data.DataColumn columnPostPartTypeName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyDataTable() {
-                this.TableName = "Body";
+            public PostPartTypeDataTable() {
+                this.TableName = "PostPartType";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3062,7 +3019,7 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BodyDataTable(global::System.Data.DataTable table) {
+            internal PostPartTypeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3079,24 +3036,24 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected BodyDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PostPartTypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BodyAutoIdColumn {
+            public global::System.Data.DataColumn PostPartTypeIdColumn {
                 get {
-                    return this.columnBodyAutoId;
+                    return this.columnPostPartTypeId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BodyColumn {
+            public global::System.Data.DataColumn PostPartTypeNameColumn {
                 get {
-                    return this.columnBody;
+                    return this.columnPostPartTypeName;
                 }
             }
             
@@ -3111,53 +3068,53 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyRow this[int index] {
+            public PostPartTypeRow this[int index] {
                 get {
-                    return ((BodyRow)(this.Rows[index]));
+                    return ((PostPartTypeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyRowChangeEventHandler BodyRowChanging;
+            public event PostPartTypeRowChangeEventHandler PostPartTypeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyRowChangeEventHandler BodyRowChanged;
+            public event PostPartTypeRowChangeEventHandler PostPartTypeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyRowChangeEventHandler BodyRowDeleting;
+            public event PostPartTypeRowChangeEventHandler PostPartTypeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyRowChangeEventHandler BodyRowDeleted;
+            public event PostPartTypeRowChangeEventHandler PostPartTypeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddBodyRow(BodyRow row) {
+            public void AddPostPartTypeRow(PostPartTypeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyRow AddBodyRow(int BodyAutoId, string Body) {
-                BodyRow rowBodyRow = ((BodyRow)(this.NewRow()));
+            public PostPartTypeRow AddPostPartTypeRow(int PostPartTypeId, string PostPartTypeName) {
+                PostPartTypeRow rowPostPartTypeRow = ((PostPartTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BodyAutoId,
-                        Body};
-                rowBodyRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBodyRow);
-                return rowBodyRow;
+                        PostPartTypeId,
+                        PostPartTypeName};
+                rowPostPartTypeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPostPartTypeRow);
+                return rowPostPartTypeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyRow FindByBodyAutoId(int BodyAutoId) {
-                return ((BodyRow)(this.Rows.Find(new object[] {
-                            BodyAutoId})));
+            public PostPartTypeRow FindByPostPartTypeId(int PostPartTypeId) {
+                return ((PostPartTypeRow)(this.Rows.Find(new object[] {
+                            PostPartTypeId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BodyDataTable cln = ((BodyDataTable)(base.Clone()));
+                PostPartTypeDataTable cln = ((PostPartTypeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3165,54 +3122,54 @@ namespace BackpageTools.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BodyDataTable();
+                return new PostPartTypeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnBodyAutoId = base.Columns["BodyAutoId"];
-                this.columnBody = base.Columns["Body"];
+                this.columnPostPartTypeId = base.Columns["PostPartTypeId"];
+                this.columnPostPartTypeName = base.Columns["PostPartTypeName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnBodyAutoId = new global::System.Data.DataColumn("BodyAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBodyAutoId);
-                this.columnBody = new global::System.Data.DataColumn("Body", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBody);
+                this.columnPostPartTypeId = new global::System.Data.DataColumn("PostPartTypeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostPartTypeId);
+                this.columnPostPartTypeName = new global::System.Data.DataColumn("PostPartTypeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostPartTypeName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnBodyAutoId}, true));
-                this.columnBodyAutoId.AllowDBNull = false;
-                this.columnBodyAutoId.Unique = true;
-                this.columnBody.MaxLength = 536870910;
+                                this.columnPostPartTypeId}, true));
+                this.columnPostPartTypeId.AllowDBNull = false;
+                this.columnPostPartTypeId.Unique = true;
+                this.columnPostPartTypeName.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyRow NewBodyRow() {
-                return ((BodyRow)(this.NewRow()));
+            public PostPartTypeRow NewPostPartTypeRow() {
+                return ((PostPartTypeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BodyRow(builder);
+                return new PostPartTypeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BodyRow);
+                return typeof(PostPartTypeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BodyRowChanged != null)) {
-                    this.BodyRowChanged(this, new BodyRowChangeEvent(((BodyRow)(e.Row)), e.Action));
+                if ((this.PostPartTypeRowChanged != null)) {
+                    this.PostPartTypeRowChanged(this, new PostPartTypeRowChangeEvent(((PostPartTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3220,8 +3177,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BodyRowChanging != null)) {
-                    this.BodyRowChanging(this, new BodyRowChangeEvent(((BodyRow)(e.Row)), e.Action));
+                if ((this.PostPartTypeRowChanging != null)) {
+                    this.PostPartTypeRowChanging(this, new PostPartTypeRowChangeEvent(((PostPartTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3229,8 +3186,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BodyRowDeleted != null)) {
-                    this.BodyRowDeleted(this, new BodyRowChangeEvent(((BodyRow)(e.Row)), e.Action));
+                if ((this.PostPartTypeRowDeleted != null)) {
+                    this.PostPartTypeRowDeleted(this, new PostPartTypeRowChangeEvent(((PostPartTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3238,14 +3195,14 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BodyRowDeleting != null)) {
-                    this.BodyRowDeleting(this, new BodyRowChangeEvent(((BodyRow)(e.Row)), e.Action));
+                if ((this.PostPartTypeRowDeleting != null)) {
+                    this.PostPartTypeRowDeleting(this, new PostPartTypeRowChangeEvent(((PostPartTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveBodyRow(BodyRow row) {
+            public void RemovePostPartTypeRow(PostPartTypeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3272,7 +3229,7 @@ namespace BackpageTools.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BodyDataTable";
+                attribute2.FixedValue = "PostPartTypeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3318,16 +3275,20 @@ namespace BackpageTools.Datasource {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FooterDataTable : global::System.Data.TypedTableBase<FooterRow> {
+        public partial class MailDataTable : global::System.Data.TypedTableBase<MailRow> {
             
-            private global::System.Data.DataColumn columnFooterAutoId;
+            private global::System.Data.DataColumn columnMailId;
             
-            private global::System.Data.DataColumn columnFooter;
+            private global::System.Data.DataColumn columnMailServer;
+            
+            private global::System.Data.DataColumn columnMailUsername;
+            
+            private global::System.Data.DataColumn columnMailPassword;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterDataTable() {
-                this.TableName = "Footer";
+            public MailDataTable() {
+                this.TableName = "Mail";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3335,7 +3296,7 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FooterDataTable(global::System.Data.DataTable table) {
+            internal MailDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3352,24 +3313,40 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FooterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FooterAutoIdColumn {
+            public global::System.Data.DataColumn MailIdColumn {
                 get {
-                    return this.columnFooterAutoId;
+                    return this.columnMailId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FooterColumn {
+            public global::System.Data.DataColumn MailServerColumn {
                 get {
-                    return this.columnFooter;
+                    return this.columnMailServer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MailUsernameColumn {
+                get {
+                    return this.columnMailUsername;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MailPasswordColumn {
+                get {
+                    return this.columnMailPassword;
                 }
             }
             
@@ -3384,53 +3361,55 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterRow this[int index] {
+            public MailRow this[int index] {
                 get {
-                    return ((FooterRow)(this.Rows[index]));
+                    return ((MailRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterRowChangeEventHandler FooterRowChanging;
+            public event MailRowChangeEventHandler MailRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterRowChangeEventHandler FooterRowChanged;
+            public event MailRowChangeEventHandler MailRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterRowChangeEventHandler FooterRowDeleting;
+            public event MailRowChangeEventHandler MailRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterRowChangeEventHandler FooterRowDeleted;
+            public event MailRowChangeEventHandler MailRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFooterRow(FooterRow row) {
+            public void AddMailRow(MailRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterRow AddFooterRow(int FooterAutoId, string Footer) {
-                FooterRow rowFooterRow = ((FooterRow)(this.NewRow()));
+            public MailRow AddMailRow(string MailServer, string MailUsername, string MailPassword) {
+                MailRow rowMailRow = ((MailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        FooterAutoId,
-                        Footer};
-                rowFooterRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFooterRow);
-                return rowFooterRow;
+                        null,
+                        MailServer,
+                        MailUsername,
+                        MailPassword};
+                rowMailRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMailRow);
+                return rowMailRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterRow FindByFooterAutoId(int FooterAutoId) {
-                return ((FooterRow)(this.Rows.Find(new object[] {
-                            FooterAutoId})));
+            public MailRow FindByMailId(int MailId) {
+                return ((MailRow)(this.Rows.Find(new object[] {
+                            MailId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FooterDataTable cln = ((FooterDataTable)(base.Clone()));
+                MailDataTable cln = ((MailDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3438,54 +3417,65 @@ namespace BackpageTools.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FooterDataTable();
+                return new MailDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnFooterAutoId = base.Columns["FooterAutoId"];
-                this.columnFooter = base.Columns["Footer"];
+                this.columnMailId = base.Columns["MailId"];
+                this.columnMailServer = base.Columns["MailServer"];
+                this.columnMailUsername = base.Columns["MailUsername"];
+                this.columnMailPassword = base.Columns["MailPassword"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnFooterAutoId = new global::System.Data.DataColumn("FooterAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFooterAutoId);
-                this.columnFooter = new global::System.Data.DataColumn("Footer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFooter);
+                this.columnMailId = new global::System.Data.DataColumn("MailId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMailId);
+                this.columnMailServer = new global::System.Data.DataColumn("MailServer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMailServer);
+                this.columnMailUsername = new global::System.Data.DataColumn("MailUsername", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMailUsername);
+                this.columnMailPassword = new global::System.Data.DataColumn("MailPassword", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMailPassword);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnFooterAutoId}, true));
-                this.columnFooterAutoId.AllowDBNull = false;
-                this.columnFooterAutoId.Unique = true;
-                this.columnFooter.MaxLength = 536870910;
+                                this.columnMailId}, true));
+                this.columnMailId.AutoIncrement = true;
+                this.columnMailId.AutoIncrementSeed = -1;
+                this.columnMailId.AutoIncrementStep = -1;
+                this.columnMailId.AllowDBNull = false;
+                this.columnMailId.Unique = true;
+                this.columnMailServer.MaxLength = 255;
+                this.columnMailUsername.MaxLength = 255;
+                this.columnMailPassword.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterRow NewFooterRow() {
-                return ((FooterRow)(this.NewRow()));
+            public MailRow NewMailRow() {
+                return ((MailRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FooterRow(builder);
+                return new MailRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FooterRow);
+                return typeof(MailRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FooterRowChanged != null)) {
-                    this.FooterRowChanged(this, new FooterRowChangeEvent(((FooterRow)(e.Row)), e.Action));
+                if ((this.MailRowChanged != null)) {
+                    this.MailRowChanged(this, new MailRowChangeEvent(((MailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3493,8 +3483,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FooterRowChanging != null)) {
-                    this.FooterRowChanging(this, new FooterRowChangeEvent(((FooterRow)(e.Row)), e.Action));
+                if ((this.MailRowChanging != null)) {
+                    this.MailRowChanging(this, new MailRowChangeEvent(((MailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3502,8 +3492,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FooterRowDeleted != null)) {
-                    this.FooterRowDeleted(this, new FooterRowChangeEvent(((FooterRow)(e.Row)), e.Action));
+                if ((this.MailRowDeleted != null)) {
+                    this.MailRowDeleted(this, new MailRowChangeEvent(((MailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3511,14 +3501,14 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FooterRowDeleting != null)) {
-                    this.FooterRowDeleting(this, new FooterRowChangeEvent(((FooterRow)(e.Row)), e.Action));
+                if ((this.MailRowDeleting != null)) {
+                    this.MailRowDeleting(this, new MailRowChangeEvent(((MailRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFooterRow(FooterRow row) {
+            public void RemoveMailRow(MailRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3545,7 +3535,7 @@ namespace BackpageTools.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FooterDataTable";
+                attribute2.FixedValue = "MailDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3591,16 +3581,16 @@ namespace BackpageTools.Datasource {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HeaderCategoryDataTable : global::System.Data.TypedTableBase<HeaderCategoryRow> {
+        public partial class CategoryItemDataTable : global::System.Data.TypedTableBase<CategoryItemRow> {
             
-            private global::System.Data.DataColumn columnHeaderAutoId;
+            private global::System.Data.DataColumn columnCategoryItemId;
             
-            private global::System.Data.DataColumn columnCatAutoId;
+            private global::System.Data.DataColumn columnCategoryItem;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryDataTable() {
-                this.TableName = "HeaderCategory";
+            public CategoryItemDataTable() {
+                this.TableName = "CategoryItem";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3608,7 +3598,7 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HeaderCategoryDataTable(global::System.Data.DataTable table) {
+            internal CategoryItemDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3625,24 +3615,24 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected HeaderCategoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CategoryItemDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HeaderAutoIdColumn {
+            public global::System.Data.DataColumn CategoryItemIdColumn {
                 get {
-                    return this.columnHeaderAutoId;
+                    return this.columnCategoryItemId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CatAutoIdColumn {
+            public global::System.Data.DataColumn CategoryItemColumn {
                 get {
-                    return this.columnCatAutoId;
+                    return this.columnCategoryItem;
                 }
             }
             
@@ -3657,60 +3647,336 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRow this[int index] {
+            public CategoryItemRow this[int index] {
                 get {
-                    return ((HeaderCategoryRow)(this.Rows[index]));
+                    return ((CategoryItemRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderCategoryRowChangeEventHandler HeaderCategoryRowChanging;
+            public event CategoryItemRowChangeEventHandler CategoryItemRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderCategoryRowChangeEventHandler HeaderCategoryRowChanged;
+            public event CategoryItemRowChangeEventHandler CategoryItemRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderCategoryRowChangeEventHandler HeaderCategoryRowDeleting;
+            public event CategoryItemRowChangeEventHandler CategoryItemRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HeaderCategoryRowChangeEventHandler HeaderCategoryRowDeleted;
+            public event CategoryItemRowChangeEventHandler CategoryItemRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddHeaderCategoryRow(HeaderCategoryRow row) {
+            public void AddCategoryItemRow(CategoryItemRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRow AddHeaderCategoryRow(HeaderRow parentHeaderRowByHeaderHeaderCategory, CategoryRow parentCategoryRowByCategoryHeaderCategory) {
-                HeaderCategoryRow rowHeaderCategoryRow = ((HeaderCategoryRow)(this.NewRow()));
+            public CategoryItemRow AddCategoryItemRow(string CategoryItem) {
+                CategoryItemRow rowCategoryItemRow = ((CategoryItemRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        CategoryItem};
+                rowCategoryItemRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCategoryItemRow);
+                return rowCategoryItemRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CategoryItemRow FindByCategoryItemId(int CategoryItemId) {
+                return ((CategoryItemRow)(this.Rows.Find(new object[] {
+                            CategoryItemId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CategoryItemDataTable cln = ((CategoryItemDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CategoryItemDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnCategoryItemId = base.Columns["CategoryItemId"];
+                this.columnCategoryItem = base.Columns["CategoryItem"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnCategoryItemId = new global::System.Data.DataColumn("CategoryItemId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoryItemId);
+                this.columnCategoryItem = new global::System.Data.DataColumn("CategoryItem", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoryItem);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCategoryItemId}, true));
+                this.columnCategoryItemId.AutoIncrement = true;
+                this.columnCategoryItemId.AutoIncrementSeed = -1;
+                this.columnCategoryItemId.AutoIncrementStep = -1;
+                this.columnCategoryItemId.AllowDBNull = false;
+                this.columnCategoryItemId.Unique = true;
+                this.columnCategoryItem.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CategoryItemRow NewCategoryItemRow() {
+                return ((CategoryItemRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CategoryItemRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CategoryItemRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CategoryItemRowChanged != null)) {
+                    this.CategoryItemRowChanged(this, new CategoryItemRowChangeEvent(((CategoryItemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CategoryItemRowChanging != null)) {
+                    this.CategoryItemRowChanging(this, new CategoryItemRowChangeEvent(((CategoryItemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CategoryItemRowDeleted != null)) {
+                    this.CategoryItemRowDeleted(this, new CategoryItemRowChangeEvent(((CategoryItemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CategoryItemRowDeleting != null)) {
+                    this.CategoryItemRowDeleting(this, new CategoryItemRowChangeEvent(((CategoryItemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveCategoryItemRow(CategoryItemRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsData ds = new dsData();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CategoryItemDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PostCategoryDataTable : global::System.Data.TypedTableBase<PostCategoryRow> {
+            
+            private global::System.Data.DataColumn columnPostAutoId;
+            
+            private global::System.Data.DataColumn columnCategoryItemId;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PostCategoryDataTable() {
+                this.TableName = "PostCategory";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PostCategoryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PostCategoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PostAutoIdColumn {
+                get {
+                    return this.columnPostAutoId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CategoryItemIdColumn {
+                get {
+                    return this.columnCategoryItemId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PostCategoryRow this[int index] {
+                get {
+                    return ((PostCategoryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PostCategoryRowChangeEventHandler PostCategoryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PostCategoryRowChangeEventHandler PostCategoryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PostCategoryRowChangeEventHandler PostCategoryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PostCategoryRowChangeEventHandler PostCategoryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPostCategoryRow(PostCategoryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PostCategoryRow AddPostCategoryRow(PostsRow parentPostsRowByHeaderHeaderCategory, CategoryRow parentCategoryRowByCategoryHeaderCategory) {
+                PostCategoryRow rowPostCategoryRow = ((PostCategoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null};
-                if ((parentHeaderRowByHeaderHeaderCategory != null)) {
-                    columnValuesArray[0] = parentHeaderRowByHeaderHeaderCategory[0];
+                if ((parentPostsRowByHeaderHeaderCategory != null)) {
+                    columnValuesArray[0] = parentPostsRowByHeaderHeaderCategory[0];
                 }
                 if ((parentCategoryRowByCategoryHeaderCategory != null)) {
                     columnValuesArray[1] = parentCategoryRowByCategoryHeaderCategory[0];
                 }
-                rowHeaderCategoryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHeaderCategoryRow);
-                return rowHeaderCategoryRow;
+                rowPostCategoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPostCategoryRow);
+                return rowPostCategoryRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRow FindByHeaderAutoIdCatAutoId(int HeaderAutoId, int CatAutoId) {
-                return ((HeaderCategoryRow)(this.Rows.Find(new object[] {
-                            HeaderAutoId,
-                            CatAutoId})));
+            public PostCategoryRow FindByPostAutoIdCategoryItemId(int PostAutoId, int CategoryItemId) {
+                return ((PostCategoryRow)(this.Rows.Find(new object[] {
+                            PostAutoId,
+                            CategoryItemId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                HeaderCategoryDataTable cln = ((HeaderCategoryDataTable)(base.Clone()));
+                PostCategoryDataTable cln = ((PostCategoryDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3718,54 +3984,54 @@ namespace BackpageTools.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new HeaderCategoryDataTable();
+                return new PostCategoryDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnHeaderAutoId = base.Columns["HeaderAutoId"];
-                this.columnCatAutoId = base.Columns["CatAutoId"];
+                this.columnPostAutoId = base.Columns["PostAutoId"];
+                this.columnCategoryItemId = base.Columns["CategoryItemId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnHeaderAutoId = new global::System.Data.DataColumn("HeaderAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHeaderAutoId);
-                this.columnCatAutoId = new global::System.Data.DataColumn("CatAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCatAutoId);
+                this.columnPostAutoId = new global::System.Data.DataColumn("PostAutoId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostAutoId);
+                this.columnCategoryItemId = new global::System.Data.DataColumn("CategoryItemId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoryItemId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnHeaderAutoId,
-                                this.columnCatAutoId}, true));
-                this.columnHeaderAutoId.AllowDBNull = false;
-                this.columnCatAutoId.AllowDBNull = false;
+                                this.columnPostAutoId,
+                                this.columnCategoryItemId}, true));
+                this.columnPostAutoId.AllowDBNull = false;
+                this.columnCategoryItemId.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRow NewHeaderCategoryRow() {
-                return ((HeaderCategoryRow)(this.NewRow()));
+            public PostCategoryRow NewPostCategoryRow() {
+                return ((PostCategoryRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HeaderCategoryRow(builder);
+                return new PostCategoryRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(HeaderCategoryRow);
+                return typeof(PostCategoryRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.HeaderCategoryRowChanged != null)) {
-                    this.HeaderCategoryRowChanged(this, new HeaderCategoryRowChangeEvent(((HeaderCategoryRow)(e.Row)), e.Action));
+                if ((this.PostCategoryRowChanged != null)) {
+                    this.PostCategoryRowChanged(this, new PostCategoryRowChangeEvent(((PostCategoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3773,8 +4039,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.HeaderCategoryRowChanging != null)) {
-                    this.HeaderCategoryRowChanging(this, new HeaderCategoryRowChangeEvent(((HeaderCategoryRow)(e.Row)), e.Action));
+                if ((this.PostCategoryRowChanging != null)) {
+                    this.PostCategoryRowChanging(this, new PostCategoryRowChangeEvent(((PostCategoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3782,8 +4048,8 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.HeaderCategoryRowDeleted != null)) {
-                    this.HeaderCategoryRowDeleted(this, new HeaderCategoryRowChangeEvent(((HeaderCategoryRow)(e.Row)), e.Action));
+                if ((this.PostCategoryRowDeleted != null)) {
+                    this.PostCategoryRowDeleted(this, new PostCategoryRowChangeEvent(((PostCategoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3791,14 +4057,14 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.HeaderCategoryRowDeleting != null)) {
-                    this.HeaderCategoryRowDeleting(this, new HeaderCategoryRowChangeEvent(((HeaderCategoryRow)(e.Row)), e.Action));
+                if ((this.PostCategoryRowDeleting != null)) {
+                    this.PostCategoryRowDeleting(this, new PostCategoryRowChangeEvent(((PostCategoryRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveHeaderCategoryRow(HeaderCategoryRow row) {
+            public void RemovePostCategoryRow(PostCategoryRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3825,567 +4091,7 @@ namespace BackpageTools.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HeaderCategoryDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BodyCategoryDataTable : global::System.Data.TypedTableBase<BodyCategoryRow> {
-            
-            private global::System.Data.DataColumn columnBodyAutoId;
-            
-            private global::System.Data.DataColumn columnCatAutoId;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryDataTable() {
-                this.TableName = "BodyCategory";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BodyCategoryDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected BodyCategoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BodyAutoIdColumn {
-                get {
-                    return this.columnBodyAutoId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CatAutoIdColumn {
-                get {
-                    return this.columnCatAutoId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRow this[int index] {
-                get {
-                    return ((BodyCategoryRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyCategoryRowChangeEventHandler BodyCategoryRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyCategoryRowChangeEventHandler BodyCategoryRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyCategoryRowChangeEventHandler BodyCategoryRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BodyCategoryRowChangeEventHandler BodyCategoryRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddBodyCategoryRow(BodyCategoryRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRow AddBodyCategoryRow(BodyRow parentBodyRowByBodyBodyCategory, CategoryRow parentCategoryRowByCategoryBodyCategory) {
-                BodyCategoryRow rowBodyCategoryRow = ((BodyCategoryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null};
-                if ((parentBodyRowByBodyBodyCategory != null)) {
-                    columnValuesArray[0] = parentBodyRowByBodyBodyCategory[0];
-                }
-                if ((parentCategoryRowByCategoryBodyCategory != null)) {
-                    columnValuesArray[1] = parentCategoryRowByCategoryBodyCategory[0];
-                }
-                rowBodyCategoryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBodyCategoryRow);
-                return rowBodyCategoryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRow FindByBodyAutoIdCatAutoId(int BodyAutoId, int CatAutoId) {
-                return ((BodyCategoryRow)(this.Rows.Find(new object[] {
-                            BodyAutoId,
-                            CatAutoId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                BodyCategoryDataTable cln = ((BodyCategoryDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new BodyCategoryDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnBodyAutoId = base.Columns["BodyAutoId"];
-                this.columnCatAutoId = base.Columns["CatAutoId"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnBodyAutoId = new global::System.Data.DataColumn("BodyAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBodyAutoId);
-                this.columnCatAutoId = new global::System.Data.DataColumn("CatAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCatAutoId);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnBodyAutoId,
-                                this.columnCatAutoId}, true));
-                this.columnBodyAutoId.AllowDBNull = false;
-                this.columnCatAutoId.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRow NewBodyCategoryRow() {
-                return ((BodyCategoryRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BodyCategoryRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(BodyCategoryRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.BodyCategoryRowChanged != null)) {
-                    this.BodyCategoryRowChanged(this, new BodyCategoryRowChangeEvent(((BodyCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.BodyCategoryRowChanging != null)) {
-                    this.BodyCategoryRowChanging(this, new BodyCategoryRowChangeEvent(((BodyCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.BodyCategoryRowDeleted != null)) {
-                    this.BodyCategoryRowDeleted(this, new BodyCategoryRowChangeEvent(((BodyCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.BodyCategoryRowDeleting != null)) {
-                    this.BodyCategoryRowDeleting(this, new BodyCategoryRowChangeEvent(((BodyCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveBodyCategoryRow(BodyCategoryRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsData ds = new dsData();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BodyCategoryDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FooterCategoryDataTable : global::System.Data.TypedTableBase<FooterCategoryRow> {
-            
-            private global::System.Data.DataColumn columnFooterAutoId;
-            
-            private global::System.Data.DataColumn columnCatAutoId;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryDataTable() {
-                this.TableName = "FooterCategory";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FooterCategoryDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FooterCategoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FooterAutoIdColumn {
-                get {
-                    return this.columnFooterAutoId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CatAutoIdColumn {
-                get {
-                    return this.columnCatAutoId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRow this[int index] {
-                get {
-                    return ((FooterCategoryRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterCategoryRowChangeEventHandler FooterCategoryRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterCategoryRowChangeEventHandler FooterCategoryRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterCategoryRowChangeEventHandler FooterCategoryRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FooterCategoryRowChangeEventHandler FooterCategoryRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFooterCategoryRow(FooterCategoryRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRow AddFooterCategoryRow(FooterRow parentFooterRowByFooterFooterCategory, CategoryRow parentCategoryRowByCategoryFooterCategory) {
-                FooterCategoryRow rowFooterCategoryRow = ((FooterCategoryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null};
-                if ((parentFooterRowByFooterFooterCategory != null)) {
-                    columnValuesArray[0] = parentFooterRowByFooterFooterCategory[0];
-                }
-                if ((parentCategoryRowByCategoryFooterCategory != null)) {
-                    columnValuesArray[1] = parentCategoryRowByCategoryFooterCategory[0];
-                }
-                rowFooterCategoryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFooterCategoryRow);
-                return rowFooterCategoryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRow FindByFooterAutoIdCatAutoId(int FooterAutoId, int CatAutoId) {
-                return ((FooterCategoryRow)(this.Rows.Find(new object[] {
-                            FooterAutoId,
-                            CatAutoId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                FooterCategoryDataTable cln = ((FooterCategoryDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new FooterCategoryDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnFooterAutoId = base.Columns["FooterAutoId"];
-                this.columnCatAutoId = base.Columns["CatAutoId"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnFooterAutoId = new global::System.Data.DataColumn("FooterAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFooterAutoId);
-                this.columnCatAutoId = new global::System.Data.DataColumn("CatAutoId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCatAutoId);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnFooterAutoId,
-                                this.columnCatAutoId}, true));
-                this.columnFooterAutoId.AllowDBNull = false;
-                this.columnCatAutoId.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRow NewFooterCategoryRow() {
-                return ((FooterCategoryRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FooterCategoryRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(FooterCategoryRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.FooterCategoryRowChanged != null)) {
-                    this.FooterCategoryRowChanged(this, new FooterCategoryRowChangeEvent(((FooterCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.FooterCategoryRowChanging != null)) {
-                    this.FooterCategoryRowChanging(this, new FooterCategoryRowChangeEvent(((FooterCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.FooterCategoryRowDeleted != null)) {
-                    this.FooterCategoryRowDeleted(this, new FooterCategoryRowChangeEvent(((FooterCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.FooterCategoryRowDeleting != null)) {
-                    this.FooterCategoryRowDeleting(this, new FooterCategoryRowChangeEvent(((FooterCategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFooterCategoryRow(FooterCategoryRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsData ds = new dsData();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FooterCategoryDataTable";
+                attribute2.FixedValue = "PostCategoryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4535,22 +4241,6 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Category {
-                get {
-                    try {
-                        return ((string)(this[this.tablePostList.CategoryColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Category\' in table \'PostList\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePostList.CategoryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PostLink {
                 get {
                     try {
@@ -4567,14 +4257,18 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCategoryNull() {
-                return this.IsNull(this.tablePostList.CategoryColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCategoryNull() {
-                this[this.tablePostList.CategoryColumn] = global::System.Convert.DBNull;
+            public int CategoryItemId {
+                get {
+                    try {
+                        return ((int)(this[this.tablePostList.CategoryItemIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CategoryItemId\' in table \'PostList\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePostList.CategoryItemIdColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4587,6 +4281,18 @@ namespace BackpageTools.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPostLinkNull() {
                 this[this.tablePostList.PostLinkColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCategoryItemIdNull() {
+                return this.IsNull(this.tablePostList.CategoryItemIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCategoryItemIdNull() {
+                this[this.tablePostList.CategoryItemIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4984,34 +4690,12 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRow[] GetHeaderCategoryRows() {
+            public PostCategoryRow[] GetPostCategoryRows() {
                 if ((this.Table.ChildRelations["CategoryHeaderCategory"] == null)) {
-                    return new HeaderCategoryRow[0];
+                    return new PostCategoryRow[0];
                 }
                 else {
-                    return ((HeaderCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["CategoryHeaderCategory"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRow[] GetBodyCategoryRows() {
-                if ((this.Table.ChildRelations["CategoryBodyCategory"] == null)) {
-                    return new BodyCategoryRow[0];
-                }
-                else {
-                    return ((BodyCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["CategoryBodyCategory"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRow[] GetFooterCategoryRows() {
-                if ((this.Table.ChildRelations["CategoryFooterCategory"] == null)) {
-                    return new FooterCategoryRow[0];
-                }
-                else {
-                    return ((FooterCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["CategoryFooterCategory"])));
+                    return ((PostCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["CategoryHeaderCategory"])));
                 }
             }
         }
@@ -5019,64 +4703,92 @@ namespace BackpageTools.Datasource {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HeaderRow : global::System.Data.DataRow {
+        public partial class PostsRow : global::System.Data.DataRow {
             
-            private HeaderDataTable tableHeader;
+            private PostsDataTable tablePosts;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HeaderRow(global::System.Data.DataRowBuilder rb) : 
+            internal PostsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHeader = ((HeaderDataTable)(this.Table));
+                this.tablePosts = ((PostsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int HeaderAutoId {
+            public int PostAutoId {
                 get {
-                    return ((int)(this[this.tableHeader.HeaderAutoIdColumn]));
+                    return ((int)(this[this.tablePosts.PostAutoIdColumn]));
                 }
                 set {
-                    this[this.tableHeader.HeaderAutoIdColumn] = value;
+                    this[this.tablePosts.PostAutoIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Header {
+            public string PostText {
                 get {
                     try {
-                        return ((string)(this[this.tableHeader.HeaderColumn]));
+                        return ((string)(this[this.tablePosts.PostTextColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Header\' in table \'Header\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PostText\' in table \'Posts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHeader.HeaderColumn] = value;
+                    this[this.tablePosts.PostTextColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHeaderNull() {
-                return this.IsNull(this.tableHeader.HeaderColumn);
+            public int PostPartTypeId {
+                get {
+                    try {
+                        return ((int)(this[this.tablePosts.PostPartTypeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PostPartTypeId\' in table \'Posts\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePosts.PostPartTypeIdColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHeaderNull() {
-                this[this.tableHeader.HeaderColumn] = global::System.Convert.DBNull;
+            public bool IsPostTextNull() {
+                return this.IsNull(this.tablePosts.PostTextColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRow[] GetHeaderCategoryRows() {
+            public void SetPostTextNull() {
+                this[this.tablePosts.PostTextColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPostPartTypeIdNull() {
+                return this.IsNull(this.tablePosts.PostPartTypeIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPostPartTypeIdNull() {
+                this[this.tablePosts.PostPartTypeIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PostCategoryRow[] GetPostCategoryRows() {
                 if ((this.Table.ChildRelations["HeaderHeaderCategory"] == null)) {
-                    return new HeaderCategoryRow[0];
+                    return new PostCategoryRow[0];
                 }
                 else {
-                    return ((HeaderCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["HeaderHeaderCategory"])));
+                    return ((PostCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["HeaderHeaderCategory"])));
                 }
             }
         }
@@ -5084,129 +4796,228 @@ namespace BackpageTools.Datasource {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BodyRow : global::System.Data.DataRow {
+        public partial class PostPartTypeRow : global::System.Data.DataRow {
             
-            private BodyDataTable tableBody;
+            private PostPartTypeDataTable tablePostPartType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BodyRow(global::System.Data.DataRowBuilder rb) : 
+            internal PostPartTypeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBody = ((BodyDataTable)(this.Table));
+                this.tablePostPartType = ((PostPartTypeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int BodyAutoId {
+            public int PostPartTypeId {
                 get {
-                    return ((int)(this[this.tableBody.BodyAutoIdColumn]));
+                    return ((int)(this[this.tablePostPartType.PostPartTypeIdColumn]));
                 }
                 set {
-                    this[this.tableBody.BodyAutoIdColumn] = value;
+                    this[this.tablePostPartType.PostPartTypeIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Body {
+            public string PostPartTypeName {
                 get {
                     try {
-                        return ((string)(this[this.tableBody.BodyColumn]));
+                        return ((string)(this[this.tablePostPartType.PostPartTypeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Body\' in table \'Body\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PostPartTypeName\' in table \'PostPartType\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBody.BodyColumn] = value;
+                    this[this.tablePostPartType.PostPartTypeNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBodyNull() {
-                return this.IsNull(this.tableBody.BodyColumn);
+            public bool IsPostPartTypeNameNull() {
+                return this.IsNull(this.tablePostPartType.PostPartTypeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBodyNull() {
-                this[this.tableBody.BodyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRow[] GetBodyCategoryRows() {
-                if ((this.Table.ChildRelations["BodyBodyCategory"] == null)) {
-                    return new BodyCategoryRow[0];
-                }
-                else {
-                    return ((BodyCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["BodyBodyCategory"])));
-                }
+            public void SetPostPartTypeNameNull() {
+                this[this.tablePostPartType.PostPartTypeNameColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class FooterRow : global::System.Data.DataRow {
+        public partial class MailRow : global::System.Data.DataRow {
             
-            private FooterDataTable tableFooter;
+            private MailDataTable tableMail;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FooterRow(global::System.Data.DataRowBuilder rb) : 
+            internal MailRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFooter = ((FooterDataTable)(this.Table));
+                this.tableMail = ((MailDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int FooterAutoId {
+            public int MailId {
                 get {
-                    return ((int)(this[this.tableFooter.FooterAutoIdColumn]));
+                    return ((int)(this[this.tableMail.MailIdColumn]));
                 }
                 set {
-                    this[this.tableFooter.FooterAutoIdColumn] = value;
+                    this[this.tableMail.MailIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Footer {
+            public string MailServer {
                 get {
                     try {
-                        return ((string)(this[this.tableFooter.FooterColumn]));
+                        return ((string)(this[this.tableMail.MailServerColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Footer\' in table \'Footer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MailServer\' in table \'Mail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFooter.FooterColumn] = value;
+                    this[this.tableMail.MailServerColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFooterNull() {
-                return this.IsNull(this.tableFooter.FooterColumn);
+            public string MailUsername {
+                get {
+                    try {
+                        return ((string)(this[this.tableMail.MailUsernameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MailUsername\' in table \'Mail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMail.MailUsernameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFooterNull() {
-                this[this.tableFooter.FooterColumn] = global::System.Convert.DBNull;
+            public string MailPassword {
+                get {
+                    try {
+                        return ((string)(this[this.tableMail.MailPasswordColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MailPassword\' in table \'Mail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMail.MailPasswordColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRow[] GetFooterCategoryRows() {
-                if ((this.Table.ChildRelations["FooterFooterCategory"] == null)) {
-                    return new FooterCategoryRow[0];
+            public bool IsMailServerNull() {
+                return this.IsNull(this.tableMail.MailServerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMailServerNull() {
+                this[this.tableMail.MailServerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMailUsernameNull() {
+                return this.IsNull(this.tableMail.MailUsernameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMailUsernameNull() {
+                this[this.tableMail.MailUsernameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMailPasswordNull() {
+                return this.IsNull(this.tableMail.MailPasswordColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMailPasswordNull() {
+                this[this.tableMail.MailPasswordColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CategoryItemRow : global::System.Data.DataRow {
+            
+            private CategoryItemDataTable tableCategoryItem;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CategoryItemRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCategoryItem = ((CategoryItemDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CategoryItemId {
+                get {
+                    return ((int)(this[this.tableCategoryItem.CategoryItemIdColumn]));
+                }
+                set {
+                    this[this.tableCategoryItem.CategoryItemIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CategoryItem {
+                get {
+                    try {
+                        return ((string)(this[this.tableCategoryItem.CategoryItemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CategoryItem\' in table \'CategoryItem\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCategoryItem.CategoryItemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCategoryItemNull() {
+                return this.IsNull(this.tableCategoryItem.CategoryItemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCategoryItemNull() {
+                this[this.tableCategoryItem.CategoryItemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PostCategoryRow[] GetPostCategoryRows() {
+                if ((this.Table.ChildRelations["CategoryItemPostCategory"] == null)) {
+                    return new PostCategoryRow[0];
                 }
                 else {
-                    return ((FooterCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["FooterFooterCategory"])));
+                    return ((PostCategoryRow[])(base.GetChildRows(this.Table.ChildRelations["CategoryItemPostCategory"])));
                 }
             }
         }
@@ -5214,36 +5025,36 @@ namespace BackpageTools.Datasource {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HeaderCategoryRow : global::System.Data.DataRow {
+        public partial class PostCategoryRow : global::System.Data.DataRow {
             
-            private HeaderCategoryDataTable tableHeaderCategory;
+            private PostCategoryDataTable tablePostCategory;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HeaderCategoryRow(global::System.Data.DataRowBuilder rb) : 
+            internal PostCategoryRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHeaderCategory = ((HeaderCategoryDataTable)(this.Table));
+                this.tablePostCategory = ((PostCategoryDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int HeaderAutoId {
+            public int PostAutoId {
                 get {
-                    return ((int)(this[this.tableHeaderCategory.HeaderAutoIdColumn]));
+                    return ((int)(this[this.tablePostCategory.PostAutoIdColumn]));
                 }
                 set {
-                    this[this.tableHeaderCategory.HeaderAutoIdColumn] = value;
+                    this[this.tablePostCategory.PostAutoIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CatAutoId {
+            public int CategoryItemId {
                 get {
-                    return ((int)(this[this.tableHeaderCategory.CatAutoIdColumn]));
+                    return ((int)(this[this.tablePostCategory.CategoryItemIdColumn]));
                 }
                 set {
-                    this[this.tableHeaderCategory.CatAutoIdColumn] = value;
+                    this[this.tablePostCategory.CategoryItemIdColumn] = value;
                 }
             }
             
@@ -5260,130 +5071,23 @@ namespace BackpageTools.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderRow HeaderRow {
+            public CategoryItemRow CategoryItemRow {
                 get {
-                    return ((HeaderRow)(this.GetParentRow(this.Table.ParentRelations["HeaderHeaderCategory"])));
+                    return ((CategoryItemRow)(this.GetParentRow(this.Table.ParentRelations["CategoryItemPostCategory"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CategoryItemPostCategory"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PostsRow PostsRow {
+                get {
+                    return ((PostsRow)(this.GetParentRow(this.Table.ParentRelations["HeaderHeaderCategory"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["HeaderHeaderCategory"]);
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class BodyCategoryRow : global::System.Data.DataRow {
-            
-            private BodyCategoryDataTable tableBodyCategory;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BodyCategoryRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableBodyCategory = ((BodyCategoryDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int BodyAutoId {
-                get {
-                    return ((int)(this[this.tableBodyCategory.BodyAutoIdColumn]));
-                }
-                set {
-                    this[this.tableBodyCategory.BodyAutoIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CatAutoId {
-                get {
-                    return ((int)(this[this.tableBodyCategory.CatAutoIdColumn]));
-                }
-                set {
-                    this[this.tableBodyCategory.CatAutoIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyRow BodyRow {
-                get {
-                    return ((BodyRow)(this.GetParentRow(this.Table.ParentRelations["BodyBodyCategory"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["BodyBodyCategory"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CategoryRow CategoryRow {
-                get {
-                    return ((CategoryRow)(this.GetParentRow(this.Table.ParentRelations["CategoryBodyCategory"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["CategoryBodyCategory"]);
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class FooterCategoryRow : global::System.Data.DataRow {
-            
-            private FooterCategoryDataTable tableFooterCategory;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FooterCategoryRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableFooterCategory = ((FooterCategoryDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int FooterAutoId {
-                get {
-                    return ((int)(this[this.tableFooterCategory.FooterAutoIdColumn]));
-                }
-                set {
-                    this[this.tableFooterCategory.FooterAutoIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CatAutoId {
-                get {
-                    return ((int)(this[this.tableFooterCategory.CatAutoIdColumn]));
-                }
-                set {
-                    this[this.tableFooterCategory.CatAutoIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CategoryRow CategoryRow {
-                get {
-                    return ((CategoryRow)(this.GetParentRow(this.Table.ParentRelations["CategoryFooterCategory"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["CategoryFooterCategory"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterRow FooterRow {
-                get {
-                    return ((FooterRow)(this.GetParentRow(this.Table.ParentRelations["FooterFooterCategory"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FooterFooterCategory"]);
                 }
             }
         }
@@ -5630,22 +5334,22 @@ namespace BackpageTools.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class HeaderRowChangeEvent : global::System.EventArgs {
+        public class PostsRowChangeEvent : global::System.EventArgs {
             
-            private HeaderRow eventRow;
+            private PostsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderRowChangeEvent(HeaderRow row, global::System.Data.DataRowAction action) {
+            public PostsRowChangeEvent(PostsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderRow Row {
+            public PostsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5664,22 +5368,22 @@ namespace BackpageTools.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class BodyRowChangeEvent : global::System.EventArgs {
+        public class PostPartTypeRowChangeEvent : global::System.EventArgs {
             
-            private BodyRow eventRow;
+            private PostPartTypeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyRowChangeEvent(BodyRow row, global::System.Data.DataRowAction action) {
+            public PostPartTypeRowChangeEvent(PostPartTypeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyRow Row {
+            public PostPartTypeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5698,22 +5402,22 @@ namespace BackpageTools.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FooterRowChangeEvent : global::System.EventArgs {
+        public class MailRowChangeEvent : global::System.EventArgs {
             
-            private FooterRow eventRow;
+            private MailRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterRowChangeEvent(FooterRow row, global::System.Data.DataRowAction action) {
+            public MailRowChangeEvent(MailRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterRow Row {
+            public MailRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5732,22 +5436,22 @@ namespace BackpageTools.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class HeaderCategoryRowChangeEvent : global::System.EventArgs {
+        public class CategoryItemRowChangeEvent : global::System.EventArgs {
             
-            private HeaderCategoryRow eventRow;
+            private CategoryItemRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRowChangeEvent(HeaderCategoryRow row, global::System.Data.DataRowAction action) {
+            public CategoryItemRowChangeEvent(CategoryItemRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderCategoryRow Row {
+            public CategoryItemRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5766,56 +5470,22 @@ namespace BackpageTools.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class BodyCategoryRowChangeEvent : global::System.EventArgs {
+        public class PostCategoryRowChangeEvent : global::System.EventArgs {
             
-            private BodyCategoryRow eventRow;
+            private PostCategoryRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRowChangeEvent(BodyCategoryRow row, global::System.Data.DataRowAction action) {
+            public PostCategoryRowChangeEvent(PostCategoryRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BodyCategoryRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FooterCategoryRowChangeEvent : global::System.EventArgs {
-            
-            private FooterCategoryRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRowChangeEvent(FooterCategoryRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FooterCategoryRow Row {
+            public PostCategoryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6284,8 +5954,8 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "PostList";
             tableMapping.ColumnMappings.Add("PostListAutoId", "PostListAutoId");
-            tableMapping.ColumnMappings.Add("Category", "Category");
             tableMapping.ColumnMappings.Add("PostLink", "PostLink");
+            tableMapping.ColumnMappings.Add("CategoryItemId", "CategoryItemId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -6294,17 +5964,17 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostListAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostListAutoId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `PostList` (`Category`, `PostLink`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `PostList` (`PostLink`, `CategoryItemId`) VALUES (?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Category", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Category", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostLink", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostLink", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `PostList` SET `Category` = ?, `PostLink` = ? WHERE ((`PostListAutoId` = ?" +
-                "))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `PostList` SET `PostLink` = ?, `CategoryItemId` = ? WHERE ((`PostListAutoI" +
+                "d` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Category", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Category", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostLink", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostLink", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostListAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostListAutoId", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -6321,7 +5991,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        PostListAutoId, Category, PostLink\r\nFROM            PostList";
+            this._commandCollection[0].CommandText = "SELECT        PostListAutoId, PostLink, CategoryItemId\r\nFROM            PostList";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6404,19 +6074,14 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Category, string PostLink) {
-            if ((Category == null)) {
-                throw new global::System.ArgumentNullException("Category");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Category));
-            }
+        public virtual int Insert(string PostLink, int CategoryItemId) {
             if ((PostLink == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PostLink));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PostLink));
             }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CategoryItemId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6437,19 +6102,14 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Category, string PostLink, int Original_PostListAutoId) {
-            if ((Category == null)) {
-                throw new global::System.ArgumentNullException("Category");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Category));
-            }
+        public virtual int Update(string PostLink, int CategoryItemId, int Original_PostListAutoId) {
             if ((PostLink == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PostLink));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PostLink));
             }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CategoryItemId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_PostListAutoId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8052,7 +7712,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HeaderTableAdapter : global::System.ComponentModel.Component {
+    public partial class PostsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -8066,7 +7726,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public HeaderTableAdapter() {
+        public PostsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -8163,29 +7823,33 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Header";
-            tableMapping.ColumnMappings.Add("HeaderAutoId", "HeaderAutoId");
-            tableMapping.ColumnMappings.Add("Header", "Header");
+            tableMapping.DataSetTable = "Posts";
+            tableMapping.ColumnMappings.Add("PostAutoId", "PostAutoId");
+            tableMapping.ColumnMappings.Add("PostText", "PostText");
+            tableMapping.ColumnMappings.Add("PostPartTypeId", "PostPartTypeId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Header` WHERE ((`HeaderAutoId` = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Posts` WHERE ((`PostAutoId` = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Header` (`HeaderAutoId`, `Header`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Posts` (`PostAutoId`, `PostText`, `PostPartTypeId`) VALUES (?, ?, ?)" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Header", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Header", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostText", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostText", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostPartTypeId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Header` SET `HeaderAutoId` = ?, `Header` = ? WHERE ((`HeaderAutoId` = ?))" +
-                "";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Posts` SET `PostAutoId` = ?, `PostText` = ?, `PostPartTypeId` = ? WHERE (" +
+                "(`PostAutoId` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Header", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Header", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostText", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostText", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostPartTypeId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8201,11 +7865,11 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HeaderAutoId, Header FROM Header";
+            this._commandCollection[0].CommandText = "SELECT        PostAutoId, PostText, PostPartTypeId\r\nFROM            Posts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT iif(IsNull(MAX(HeaderAutoId) + 1), 1, MAX(HeaderAutoId) + 1)\r\nFROM Header";
+            this._commandCollection[1].CommandText = "SELECT IIf(Isnull(Max(PostAutoId)+1),1,Max(PostAutoId)+1)\r\nFROM Posts";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8213,7 +7877,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.HeaderDataTable dataTable) {
+        public virtual int Fill(dsData.PostsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8226,9 +7890,9 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.HeaderDataTable GetData() {
+        public virtual dsData.PostsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData.HeaderDataTable dataTable = new dsData.HeaderDataTable();
+            dsData.PostsDataTable dataTable = new dsData.PostsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8236,7 +7900,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData.HeaderDataTable dataTable) {
+        public virtual int Update(dsData.PostsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -8244,7 +7908,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "Header");
+            return this.Adapter.Update(dataSet, "Posts");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8266,8 +7930,8 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_HeaderAutoId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_HeaderAutoId));
+        public virtual int Delete(int Original_PostAutoId) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PostAutoId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8288,13 +7952,19 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int HeaderAutoId, string Header) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(HeaderAutoId));
-            if ((Header == null)) {
+        public virtual int Insert(int PostAutoId, string PostText, global::System.Nullable<int> PostPartTypeId) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PostAutoId));
+            if ((PostText == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Header));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PostText));
+            }
+            if ((PostPartTypeId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(PostPartTypeId.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8316,15 +7986,21 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int HeaderAutoId, string Header, int Original_HeaderAutoId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(HeaderAutoId));
-            if ((Header == null)) {
+        public virtual int Update(int PostAutoId, string PostText, global::System.Nullable<int> PostPartTypeId, int Original_PostAutoId) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PostAutoId));
+            if ((PostText == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Header));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PostText));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_HeaderAutoId));
+            if ((PostPartTypeId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(PostPartTypeId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_PostAutoId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8345,8 +8021,8 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Header, int Original_HeaderAutoId) {
-            return this.Update(Original_HeaderAutoId, Header, Original_HeaderAutoId);
+        public virtual int Update(string PostText, global::System.Nullable<int> PostPartTypeId, int Original_PostAutoId) {
+            return this.Update(Original_PostAutoId, PostText, PostPartTypeId, Original_PostAutoId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8387,7 +8063,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BodyTableAdapter : global::System.ComponentModel.Component {
+    public partial class PostPartTypeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -8401,7 +8077,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BodyTableAdapter() {
+        public PostPartTypeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -8498,28 +8174,35 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Body";
-            tableMapping.ColumnMappings.Add("BodyAutoId", "BodyAutoId");
-            tableMapping.ColumnMappings.Add("Body", "Body");
+            tableMapping.DataSetTable = "PostPartType";
+            tableMapping.ColumnMappings.Add("PostPartTypeId", "PostPartTypeId");
+            tableMapping.ColumnMappings.Add("PostPartTypeName", "PostPartTypeName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Body` WHERE ((`BodyAutoId` = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `PostPartType` WHERE ((`PostPartTypeId` = ?) AND ((? = 1 AND `PostPar" +
+                "tTypeName` IS NULL) OR (`PostPartTypeName` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostPartTypeId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PostPartTypeName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostPartTypeName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeName", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Body` (`BodyAutoId`, `Body`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `PostPartType` (`PostPartTypeId`, `PostPartTypeName`) VALUES (?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Body", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Body", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostPartTypeId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostPartTypeName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Body` SET `BodyAutoId` = ?, `Body` = ? WHERE ((`BodyAutoId` = ?))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `PostPartType` SET `PostPartTypeId` = ?, `PostPartTypeName` = ? WHERE ((`P" +
+                "ostPartTypeId` = ?) AND ((? = 1 AND `PostPartTypeName` IS NULL) OR (`PostPartTyp" +
+                "eName` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Body", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Body", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostPartTypeId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostPartTypeName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostPartTypeId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PostPartTypeName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostPartTypeName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostPartTypeName", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8535,7 +8218,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT BodyAutoId, Body FROM Body";
+            this._commandCollection[0].CommandText = "SELECT PostPartTypeId, PostPartTypeName FROM PostPartType";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8543,7 +8226,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.BodyDataTable dataTable) {
+        public virtual int Fill(dsData.PostPartTypeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8556,9 +8239,9 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.BodyDataTable GetData() {
+        public virtual dsData.PostPartTypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData.BodyDataTable dataTable = new dsData.BodyDataTable();
+            dsData.PostPartTypeDataTable dataTable = new dsData.PostPartTypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8566,7 +8249,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData.BodyDataTable dataTable) {
+        public virtual int Update(dsData.PostPartTypeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -8574,7 +8257,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "Body");
+            return this.Adapter.Update(dataSet, "PostPartType");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8596,8 +8279,16 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_BodyAutoId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_BodyAutoId));
+        public virtual int Delete(int Original_PostPartTypeId, string Original_PostPartTypeName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PostPartTypeId));
+            if ((Original_PostPartTypeName == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PostPartTypeName));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8618,13 +8309,13 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int BodyAutoId, string Body) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(BodyAutoId));
-            if ((Body == null)) {
+        public virtual int Insert(int PostPartTypeId, string PostPartTypeName) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PostPartTypeId));
+            if ((PostPartTypeName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Body));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PostPartTypeName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8646,15 +8337,23 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int BodyAutoId, string Body, int Original_BodyAutoId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(BodyAutoId));
-            if ((Body == null)) {
+        public virtual int Update(int PostPartTypeId, string PostPartTypeName, int Original_PostPartTypeId, string Original_PostPartTypeName) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PostPartTypeId));
+            if ((PostPartTypeName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Body));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PostPartTypeName));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_BodyAutoId));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_PostPartTypeId));
+            if ((Original_PostPartTypeName == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_PostPartTypeName));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8675,8 +8374,8 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Body, int Original_BodyAutoId) {
-            return this.Update(Original_BodyAutoId, Body, Original_BodyAutoId);
+        public virtual int Update(string PostPartTypeName, int Original_PostPartTypeId, string Original_PostPartTypeName) {
+            return this.Update(Original_PostPartTypeId, PostPartTypeName, Original_PostPartTypeId, Original_PostPartTypeName);
         }
     }
     
@@ -8689,7 +8388,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FooterTableAdapter : global::System.ComponentModel.Component {
+    public partial class MailTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -8703,7 +8402,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FooterTableAdapter() {
+        public MailTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -8800,29 +8499,34 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Footer";
-            tableMapping.ColumnMappings.Add("FooterAutoId", "FooterAutoId");
-            tableMapping.ColumnMappings.Add("Footer", "Footer");
+            tableMapping.DataSetTable = "Mail";
+            tableMapping.ColumnMappings.Add("MailId", "MailId");
+            tableMapping.ColumnMappings.Add("MailServer", "MailServer");
+            tableMapping.ColumnMappings.Add("MailUsername", "MailUsername");
+            tableMapping.ColumnMappings.Add("MailPassword", "MailPassword");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Footer` WHERE ((`FooterAutoId` = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Mail` WHERE ((`MailId` = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MailId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Footer` (`FooterAutoId`, `Footer`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Mail` (`MailServer`, `MailUsername`, `MailPassword`) VALUES (?, ?, ?" +
+                ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Footer", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Footer", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MailServer", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailServer", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MailUsername", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailUsername", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MailPassword", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailPassword", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Footer` SET `FooterAutoId` = ?, `Footer` = ? WHERE ((`FooterAutoId` = ?))" +
-                "";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Mail` SET `MailServer` = ?, `MailUsername` = ?, `MailPassword` = ? WHERE " +
+                "((`MailId` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Footer", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Footer", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MailServer", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailServer", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MailUsername", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailUsername", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MailPassword", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailPassword", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MailId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MailId", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8838,7 +8542,8 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT FooterAutoId, Footer FROM Footer";
+            this._commandCollection[0].CommandText = "SELECT        MailId, MailServer, MailUsername, MailPassword\r\nFROM            Mai" +
+                "l";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8846,7 +8551,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.FooterDataTable dataTable) {
+        public virtual int Fill(dsData.MailDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8859,9 +8564,9 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.FooterDataTable GetData() {
+        public virtual dsData.MailDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData.FooterDataTable dataTable = new dsData.FooterDataTable();
+            dsData.MailDataTable dataTable = new dsData.MailDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8869,7 +8574,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData.FooterDataTable dataTable) {
+        public virtual int Update(dsData.MailDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -8877,7 +8582,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "Footer");
+            return this.Adapter.Update(dataSet, "Mail");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8899,8 +8604,8 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_FooterAutoId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_FooterAutoId));
+        public virtual int Delete(int Original_MailId) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_MailId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8921,13 +8626,24 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int FooterAutoId, string Footer) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(FooterAutoId));
-            if ((Footer == null)) {
+        public virtual int Insert(string MailServer, string MailUsername, string MailPassword) {
+            if ((MailServer == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MailServer));
+            }
+            if ((MailUsername == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Footer));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MailUsername));
+            }
+            if ((MailPassword == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(MailPassword));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8949,15 +8665,26 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int FooterAutoId, string Footer, int Original_FooterAutoId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(FooterAutoId));
-            if ((Footer == null)) {
+        public virtual int Update(string MailServer, string MailUsername, string MailPassword, int Original_MailId) {
+            if ((MailServer == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(MailServer));
+            }
+            if ((MailUsername == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Footer));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MailUsername));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_FooterAutoId));
+            if ((MailPassword == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(MailPassword));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_MailId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8973,14 +8700,6 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                 }
             }
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Footer, int Original_FooterAutoId) {
-            return this.Update(Original_FooterAutoId, Footer, Original_FooterAutoId);
-        }
     }
     
     /// <summary>
@@ -8992,7 +8711,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HeaderCategoryTableAdapter : global::System.ComponentModel.Component {
+    public partial class CategoryItemTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -9006,7 +8725,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public HeaderCategoryTableAdapter() {
+        public CategoryItemTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -9103,31 +8822,26 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "HeaderCategory";
-            tableMapping.ColumnMappings.Add("HeaderAutoId", "HeaderAutoId");
-            tableMapping.ColumnMappings.Add("CatAutoId", "CatAutoId");
+            tableMapping.DataSetTable = "CategoryItem";
+            tableMapping.ColumnMappings.Add("CategoryItemId", "CategoryItemId");
+            tableMapping.ColumnMappings.Add("CategoryItem", "CategoryItem");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `HeaderCategory` WHERE ((`HeaderAutoId` = ?) AND (`CatAutoId` = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `CategoryItem` WHERE ((`CategoryItemId` = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `HeaderCategory` (`HeaderAutoId`, `CatAutoId`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `CategoryItem` (`CategoryItem`) VALUES (?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CategoryItem", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItem", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `HeaderCategory` SET `HeaderAutoId` = ?, `CatAutoId` = ? WHERE ((`HeaderAu" +
-                "toId` = ?) AND (`CatAutoId` = ?))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `CategoryItem` SET `CategoryItem` = ? WHERE ((`CategoryItemId` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HeaderAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HeaderAutoId", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CategoryItem", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItem", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9143,7 +8857,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HeaderAutoId, CatAutoId FROM HeaderCategory";
+            this._commandCollection[0].CommandText = "SELECT        CategoryItemId, CategoryItem\r\nFROM            CategoryItem";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9151,7 +8865,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.HeaderCategoryDataTable dataTable) {
+        public virtual int Fill(dsData.CategoryItemDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9164,9 +8878,9 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.HeaderCategoryDataTable GetData() {
+        public virtual dsData.CategoryItemDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData.HeaderCategoryDataTable dataTable = new dsData.HeaderCategoryDataTable();
+            dsData.CategoryItemDataTable dataTable = new dsData.CategoryItemDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9174,7 +8888,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData.HeaderCategoryDataTable dataTable) {
+        public virtual int Update(dsData.CategoryItemDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -9182,7 +8896,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "HeaderCategory");
+            return this.Adapter.Update(dataSet, "CategoryItem");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9204,9 +8918,8 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_HeaderAutoId, int Original_CatAutoId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_HeaderAutoId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CatAutoId));
+        public virtual int Delete(int Original_CategoryItemId) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CategoryItemId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9227,9 +8940,13 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int HeaderAutoId, int CatAutoId) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(HeaderAutoId));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CatAutoId));
+        public virtual int Insert(string CategoryItem) {
+            if ((CategoryItem == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CategoryItem));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9250,11 +8967,14 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int HeaderAutoId, int CatAutoId, int Original_HeaderAutoId, int Original_CatAutoId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(HeaderAutoId));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CatAutoId));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_HeaderAutoId));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_CatAutoId));
+        public virtual int Update(string CategoryItem, int Original_CategoryItemId) {
+            if ((CategoryItem == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CategoryItem));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_CategoryItemId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9270,14 +8990,6 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                 }
             }
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Original_HeaderAutoId, int Original_CatAutoId) {
-            return this.Update(Original_HeaderAutoId, Original_CatAutoId, Original_HeaderAutoId, Original_CatAutoId);
-        }
     }
     
     /// <summary>
@@ -9289,7 +9001,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BodyCategoryTableAdapter : global::System.ComponentModel.Component {
+    public partial class PostCategoryTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -9303,7 +9015,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BodyCategoryTableAdapter() {
+        public PostCategoryTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -9400,31 +9112,31 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "BodyCategory";
-            tableMapping.ColumnMappings.Add("BodyAutoId", "BodyAutoId");
-            tableMapping.ColumnMappings.Add("CatAutoId", "CatAutoId");
+            tableMapping.DataSetTable = "PostCategory";
+            tableMapping.ColumnMappings.Add("PostAutoId", "PostAutoId");
+            tableMapping.ColumnMappings.Add("CategoryItemId", "CategoryItemId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `BodyCategory` WHERE ((`BodyAutoId` = ?) AND (`CatAutoId` = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `PostCategory` WHERE ((`PostAutoId` = ?) AND (`CategoryItemId` = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `BodyCategory` (`BodyAutoId`, `CatAutoId`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `PostCategory` (`PostAutoId`, `CategoryItemId`) VALUES (?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `BodyCategory` SET `BodyAutoId` = ?, `CatAutoId` = ? WHERE ((`BodyAutoId` " +
-                "= ?) AND (`CatAutoId` = ?))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `PostCategory` SET `PostAutoId` = ?, `CategoryItemId` = ? WHERE ((`PostAut" +
+                "oId` = ?) AND (`CategoryItemId` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BodyAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BodyAutoId", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CategoryItemId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CategoryItemId", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9437,18 +9149,23 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT BodyAutoId, CatAutoId FROM BodyCategory";
+            this._commandCollection[0].CommandText = "SELECT        PostAutoId, CategoryItemId\r\nFROM            PostCategory";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM `PostCategory` WHERE ((`PostAutoId` = ?))";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PostAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PostAutoId", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.BodyCategoryDataTable dataTable) {
+        public virtual int Fill(dsData.PostCategoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9461,9 +9178,9 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.BodyCategoryDataTable GetData() {
+        public virtual dsData.PostCategoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData.BodyCategoryDataTable dataTable = new dsData.BodyCategoryDataTable();
+            dsData.PostCategoryDataTable dataTable = new dsData.PostCategoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9471,7 +9188,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData.BodyCategoryDataTable dataTable) {
+        public virtual int Update(dsData.PostCategoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -9479,7 +9196,7 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "BodyCategory");
+            return this.Adapter.Update(dataSet, "PostCategory");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9501,9 +9218,9 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_BodyAutoId, int Original_CatAutoId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_BodyAutoId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CatAutoId));
+        public virtual int Delete(int Original_PostAutoId, int Original_CategoryItemId) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PostAutoId));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CategoryItemId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9524,9 +9241,9 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int BodyAutoId, int CatAutoId) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(BodyAutoId));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CatAutoId));
+        public virtual int Insert(int PostAutoId, int CategoryItemId) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PostAutoId));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CategoryItemId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9547,11 +9264,11 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int BodyAutoId, int CatAutoId, int Original_BodyAutoId, int Original_CatAutoId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(BodyAutoId));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CatAutoId));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_BodyAutoId));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_CatAutoId));
+        public virtual int Update(int PostAutoId, int CategoryItemId, int Original_PostAutoId, int Original_CategoryItemId) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PostAutoId));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CategoryItemId));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_PostAutoId));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_CategoryItemId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9572,305 +9289,32 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Original_BodyAutoId, int Original_CatAutoId) {
-            return this.Update(Original_BodyAutoId, Original_CatAutoId, Original_BodyAutoId, Original_CatAutoId);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FooterCategoryTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
-        
-        private global::System.Data.OleDb.OleDbConnection _connection;
-        
-        private global::System.Data.OleDb.OleDbTransaction _transaction;
-        
-        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FooterCategoryTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "FooterCategory";
-            tableMapping.ColumnMappings.Add("FooterAutoId", "FooterAutoId");
-            tableMapping.ColumnMappings.Add("CatAutoId", "CatAutoId");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `FooterCategory` WHERE ((`FooterAutoId` = ?) AND (`CatAutoId` = ?))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `FooterCategory` (`FooterAutoId`, `CatAutoId`) VALUES (?, ?)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `FooterCategory` SET `FooterAutoId` = ?, `CatAutoId` = ? WHERE ((`FooterAu" +
-                "toId` = ?) AND (`CatAutoId` = ?))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FooterAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FooterAutoId", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CatAutoId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CatAutoId", global::System.Data.DataRowVersion.Original, false, null));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BackpageTools.Properties.Settings.Default.dbConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
-            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT FooterAutoId, CatAutoId FROM FooterCategory";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        public virtual int Update(int Original_PostAutoId, int Original_CategoryItemId) {
+            return this.Update(Original_PostAutoId, Original_CategoryItemId, Original_PostAutoId, Original_CategoryItemId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.FooterCategoryDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteByPostAutoId(int PostAutoId) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(PostAutoId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
             }
-            int returnValue = this.Adapter.Fill(dataTable);
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
             return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.FooterCategoryDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData.FooterCategoryDataTable dataTable = new dsData.FooterCategoryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData.FooterCategoryDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "FooterCategory");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_FooterAutoId, int Original_CatAutoId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_FooterAutoId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CatAutoId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int FooterAutoId, int CatAutoId) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(FooterAutoId));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CatAutoId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int FooterAutoId, int CatAutoId, int Original_FooterAutoId, int Original_CatAutoId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(FooterAutoId));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CatAutoId));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_FooterAutoId));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_CatAutoId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Original_FooterAutoId, int Original_CatAutoId) {
-            return this.Update(Original_FooterAutoId, Original_CatAutoId, Original_FooterAutoId, Original_CatAutoId);
         }
     }
     
@@ -9900,17 +9344,15 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         
         private CategoryTableAdapter _categoryTableAdapter;
         
-        private HeaderTableAdapter _headerTableAdapter;
+        private PostsTableAdapter _postsTableAdapter;
         
-        private BodyTableAdapter _bodyTableAdapter;
+        private PostPartTypeTableAdapter _postPartTypeTableAdapter;
         
-        private FooterTableAdapter _footerTableAdapter;
+        private MailTableAdapter _mailTableAdapter;
         
-        private HeaderCategoryTableAdapter _headerCategoryTableAdapter;
+        private CategoryItemTableAdapter _categoryItemTableAdapter;
         
-        private BodyCategoryTableAdapter _bodyCategoryTableAdapter;
-        
-        private FooterCategoryTableAdapter _footerCategoryTableAdapter;
+        private PostCategoryTableAdapter _postCategoryTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -10030,12 +9472,12 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public HeaderTableAdapter HeaderTableAdapter {
+        public PostsTableAdapter PostsTableAdapter {
             get {
-                return this._headerTableAdapter;
+                return this._postsTableAdapter;
             }
             set {
-                this._headerTableAdapter = value;
+                this._postsTableAdapter = value;
             }
         }
         
@@ -10044,12 +9486,12 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public BodyTableAdapter BodyTableAdapter {
+        public PostPartTypeTableAdapter PostPartTypeTableAdapter {
             get {
-                return this._bodyTableAdapter;
+                return this._postPartTypeTableAdapter;
             }
             set {
-                this._bodyTableAdapter = value;
+                this._postPartTypeTableAdapter = value;
             }
         }
         
@@ -10058,12 +9500,12 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public FooterTableAdapter FooterTableAdapter {
+        public MailTableAdapter MailTableAdapter {
             get {
-                return this._footerTableAdapter;
+                return this._mailTableAdapter;
             }
             set {
-                this._footerTableAdapter = value;
+                this._mailTableAdapter = value;
             }
         }
         
@@ -10072,12 +9514,12 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public HeaderCategoryTableAdapter HeaderCategoryTableAdapter {
+        public CategoryItemTableAdapter CategoryItemTableAdapter {
             get {
-                return this._headerCategoryTableAdapter;
+                return this._categoryItemTableAdapter;
             }
             set {
-                this._headerCategoryTableAdapter = value;
+                this._categoryItemTableAdapter = value;
             }
         }
         
@@ -10086,26 +9528,12 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public BodyCategoryTableAdapter BodyCategoryTableAdapter {
+        public PostCategoryTableAdapter PostCategoryTableAdapter {
             get {
-                return this._bodyCategoryTableAdapter;
+                return this._postCategoryTableAdapter;
             }
             set {
-                this._bodyCategoryTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public FooterCategoryTableAdapter FooterCategoryTableAdapter {
-            get {
-                return this._footerCategoryTableAdapter;
-            }
-            set {
-                this._footerCategoryTableAdapter = value;
+                this._postCategoryTableAdapter = value;
             }
         }
         
@@ -10156,29 +9584,25 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                             && (this._categoryTableAdapter.Connection != null))) {
                     return this._categoryTableAdapter.Connection;
                 }
-                if (((this._headerTableAdapter != null) 
-                            && (this._headerTableAdapter.Connection != null))) {
-                    return this._headerTableAdapter.Connection;
+                if (((this._postsTableAdapter != null) 
+                            && (this._postsTableAdapter.Connection != null))) {
+                    return this._postsTableAdapter.Connection;
                 }
-                if (((this._bodyTableAdapter != null) 
-                            && (this._bodyTableAdapter.Connection != null))) {
-                    return this._bodyTableAdapter.Connection;
+                if (((this._postPartTypeTableAdapter != null) 
+                            && (this._postPartTypeTableAdapter.Connection != null))) {
+                    return this._postPartTypeTableAdapter.Connection;
                 }
-                if (((this._footerTableAdapter != null) 
-                            && (this._footerTableAdapter.Connection != null))) {
-                    return this._footerTableAdapter.Connection;
+                if (((this._mailTableAdapter != null) 
+                            && (this._mailTableAdapter.Connection != null))) {
+                    return this._mailTableAdapter.Connection;
                 }
-                if (((this._headerCategoryTableAdapter != null) 
-                            && (this._headerCategoryTableAdapter.Connection != null))) {
-                    return this._headerCategoryTableAdapter.Connection;
+                if (((this._categoryItemTableAdapter != null) 
+                            && (this._categoryItemTableAdapter.Connection != null))) {
+                    return this._categoryItemTableAdapter.Connection;
                 }
-                if (((this._bodyCategoryTableAdapter != null) 
-                            && (this._bodyCategoryTableAdapter.Connection != null))) {
-                    return this._bodyCategoryTableAdapter.Connection;
-                }
-                if (((this._footerCategoryTableAdapter != null) 
-                            && (this._footerCategoryTableAdapter.Connection != null))) {
-                    return this._footerCategoryTableAdapter.Connection;
+                if (((this._postCategoryTableAdapter != null) 
+                            && (this._postCategoryTableAdapter.Connection != null))) {
+                    return this._postCategoryTableAdapter.Connection;
                 }
                 return null;
             }
@@ -10214,22 +9638,19 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                 if ((this._categoryTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._headerTableAdapter != null)) {
+                if ((this._postsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._bodyTableAdapter != null)) {
+                if ((this._postPartTypeTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._footerTableAdapter != null)) {
+                if ((this._mailTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._headerCategoryTableAdapter != null)) {
+                if ((this._categoryItemTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._bodyCategoryTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._footerCategoryTableAdapter != null)) {
+                if ((this._postCategoryTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -10252,30 +9673,21 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._headerTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Header.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._postsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Posts.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._headerTableAdapter.Update(updatedRows));
+                    result = (result + this._postsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._bodyTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Body.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._categoryItemTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CategoryItem.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._bodyTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._footerTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Footer.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._footerTableAdapter.Update(updatedRows));
+                    result = (result + this._categoryItemTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10333,30 +9745,30 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._headerCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.HeaderCategory.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._postPartTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PostPartType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._headerCategoryTableAdapter.Update(updatedRows));
+                    result = (result + this._postPartTypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._bodyCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.BodyCategory.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mailTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Mail.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._bodyCategoryTableAdapter.Update(updatedRows));
+                    result = (result + this._mailTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._footerCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FooterCategory.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._postCategoryTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PostCategory.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._footerCategoryTableAdapter.Update(updatedRows));
+                    result = (result + this._postCategoryTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10378,27 +9790,19 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._headerTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Header.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._postsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Posts.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._headerTableAdapter.Update(addedRows));
+                    result = (result + this._postsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._bodyTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Body.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._categoryItemTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CategoryItem.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._bodyTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._footerTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Footer.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._footerTableAdapter.Update(addedRows));
+                    result = (result + this._categoryItemTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10450,27 +9854,27 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._headerCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.HeaderCategory.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._postPartTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PostPartType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._headerCategoryTableAdapter.Update(addedRows));
+                    result = (result + this._postPartTypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._bodyCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.BodyCategory.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mailTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Mail.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._bodyCategoryTableAdapter.Update(addedRows));
+                    result = (result + this._mailTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._footerCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FooterCategory.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._postCategoryTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PostCategory.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._footerCategoryTableAdapter.Update(addedRows));
+                    result = (result + this._postCategoryTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10484,27 +9888,27 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._footerCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FooterCategory.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._postCategoryTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PostCategory.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._footerCategoryTableAdapter.Update(deletedRows));
+                    result = (result + this._postCategoryTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._bodyCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.BodyCategory.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mailTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Mail.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._bodyCategoryTableAdapter.Update(deletedRows));
+                    result = (result + this._mailTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._headerCategoryTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.HeaderCategory.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._postPartTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PostPartType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._headerCategoryTableAdapter.Update(deletedRows));
+                    result = (result + this._postPartTypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10556,27 +9960,19 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._footerTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Footer.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._categoryItemTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CategoryItem.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._footerTableAdapter.Update(deletedRows));
+                    result = (result + this._categoryItemTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._bodyTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Body.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._postsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Posts.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._bodyTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._headerTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Header.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._headerTableAdapter.Update(deletedRows));
+                    result = (result + this._postsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10662,33 +10058,28 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._headerTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._headerTableAdapter.Connection) == false))) {
+            if (((this._postsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._postsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._bodyTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._bodyTableAdapter.Connection) == false))) {
+            if (((this._postPartTypeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._postPartTypeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._footerTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._footerTableAdapter.Connection) == false))) {
+            if (((this._mailTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._mailTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._headerCategoryTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._headerCategoryTableAdapter.Connection) == false))) {
+            if (((this._categoryItemTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._categoryItemTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._bodyCategoryTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._bodyCategoryTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._footerCategoryTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._footerCategoryTableAdapter.Connection) == false))) {
+            if (((this._postCategoryTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._postCategoryTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -10787,58 +10178,49 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._categoryTableAdapter.Adapter);
                     }
                 }
-                if ((this._headerTableAdapter != null)) {
-                    revertConnections.Add(this._headerTableAdapter, this._headerTableAdapter.Connection);
-                    this._headerTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._headerTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._headerTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._headerTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._headerTableAdapter.Adapter);
+                if ((this._postsTableAdapter != null)) {
+                    revertConnections.Add(this._postsTableAdapter, this._postsTableAdapter.Connection);
+                    this._postsTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._postsTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._postsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._postsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._postsTableAdapter.Adapter);
                     }
                 }
-                if ((this._bodyTableAdapter != null)) {
-                    revertConnections.Add(this._bodyTableAdapter, this._bodyTableAdapter.Connection);
-                    this._bodyTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._bodyTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._bodyTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._bodyTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._bodyTableAdapter.Adapter);
+                if ((this._postPartTypeTableAdapter != null)) {
+                    revertConnections.Add(this._postPartTypeTableAdapter, this._postPartTypeTableAdapter.Connection);
+                    this._postPartTypeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._postPartTypeTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._postPartTypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._postPartTypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._postPartTypeTableAdapter.Adapter);
                     }
                 }
-                if ((this._footerTableAdapter != null)) {
-                    revertConnections.Add(this._footerTableAdapter, this._footerTableAdapter.Connection);
-                    this._footerTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._footerTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._footerTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._footerTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._footerTableAdapter.Adapter);
+                if ((this._mailTableAdapter != null)) {
+                    revertConnections.Add(this._mailTableAdapter, this._mailTableAdapter.Connection);
+                    this._mailTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._mailTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._mailTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._mailTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._mailTableAdapter.Adapter);
                     }
                 }
-                if ((this._headerCategoryTableAdapter != null)) {
-                    revertConnections.Add(this._headerCategoryTableAdapter, this._headerCategoryTableAdapter.Connection);
-                    this._headerCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._headerCategoryTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._headerCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._headerCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._headerCategoryTableAdapter.Adapter);
+                if ((this._categoryItemTableAdapter != null)) {
+                    revertConnections.Add(this._categoryItemTableAdapter, this._categoryItemTableAdapter.Connection);
+                    this._categoryItemTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._categoryItemTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._categoryItemTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._categoryItemTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._categoryItemTableAdapter.Adapter);
                     }
                 }
-                if ((this._bodyCategoryTableAdapter != null)) {
-                    revertConnections.Add(this._bodyCategoryTableAdapter, this._bodyCategoryTableAdapter.Connection);
-                    this._bodyCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._bodyCategoryTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._bodyCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._bodyCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._bodyCategoryTableAdapter.Adapter);
-                    }
-                }
-                if ((this._footerCategoryTableAdapter != null)) {
-                    revertConnections.Add(this._footerCategoryTableAdapter, this._footerCategoryTableAdapter.Connection);
-                    this._footerCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._footerCategoryTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._footerCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._footerCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._footerCategoryTableAdapter.Adapter);
+                if ((this._postCategoryTableAdapter != null)) {
+                    revertConnections.Add(this._postCategoryTableAdapter, this._postCategoryTableAdapter.Connection);
+                    this._postCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._postCategoryTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._postCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._postCategoryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._postCategoryTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -10927,29 +10309,25 @@ namespace BackpageTools.Datasource.dsDataTableAdapters {
                     this._categoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._categoryTableAdapter]));
                     this._categoryTableAdapter.Transaction = null;
                 }
-                if ((this._headerTableAdapter != null)) {
-                    this._headerTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._headerTableAdapter]));
-                    this._headerTableAdapter.Transaction = null;
+                if ((this._postsTableAdapter != null)) {
+                    this._postsTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._postsTableAdapter]));
+                    this._postsTableAdapter.Transaction = null;
                 }
-                if ((this._bodyTableAdapter != null)) {
-                    this._bodyTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._bodyTableAdapter]));
-                    this._bodyTableAdapter.Transaction = null;
+                if ((this._postPartTypeTableAdapter != null)) {
+                    this._postPartTypeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._postPartTypeTableAdapter]));
+                    this._postPartTypeTableAdapter.Transaction = null;
                 }
-                if ((this._footerTableAdapter != null)) {
-                    this._footerTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._footerTableAdapter]));
-                    this._footerTableAdapter.Transaction = null;
+                if ((this._mailTableAdapter != null)) {
+                    this._mailTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._mailTableAdapter]));
+                    this._mailTableAdapter.Transaction = null;
                 }
-                if ((this._headerCategoryTableAdapter != null)) {
-                    this._headerCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._headerCategoryTableAdapter]));
-                    this._headerCategoryTableAdapter.Transaction = null;
+                if ((this._categoryItemTableAdapter != null)) {
+                    this._categoryItemTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._categoryItemTableAdapter]));
+                    this._categoryItemTableAdapter.Transaction = null;
                 }
-                if ((this._bodyCategoryTableAdapter != null)) {
-                    this._bodyCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._bodyCategoryTableAdapter]));
-                    this._bodyCategoryTableAdapter.Transaction = null;
-                }
-                if ((this._footerCategoryTableAdapter != null)) {
-                    this._footerCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._footerCategoryTableAdapter]));
-                    this._footerCategoryTableAdapter.Transaction = null;
+                if ((this._postCategoryTableAdapter != null)) {
+                    this._postCategoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._postCategoryTableAdapter]));
+                    this._postCategoryTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

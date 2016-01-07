@@ -1,6 +1,6 @@
 ﻿namespace BackpageTools.UI.Code
 {
-    partial class PostListUC
+    partial class PostEditorUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,51 +30,53 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.postListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsData = new BackpageTools.Datasource.dsData();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCategory = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPostLink = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPostAutoId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPostText = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPostPartTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditPostPartTypeId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.postPartTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bbiAddBulk = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiEditPostCategory = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.postListTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.PostListTableAdapter();
-            this.repositoryItemLookUpEditCategoryItemId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.categoryItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryItemTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.CategoryItemTableAdapter();
+            this.postsTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.PostsTableAdapter();
+            this.postPartTypeTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.PostPartTypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPostPartTypeId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postPartTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCategoryItemId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
             // 
-            this.gridControlMain.DataSource = this.postListBindingSource;
+            this.gridControlMain.DataSource = this.postsBindingSource;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.Location = new System.Drawing.Point(0, 24);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditCategoryItemId});
+            this.repositoryItemLookUpEditPostPartTypeId});
             this.gridControlMain.Size = new System.Drawing.Size(536, 326);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
-            // postListBindingSource
+            // postsBindingSource
             // 
-            this.postListBindingSource.DataMember = "PostList";
-            this.postListBindingSource.DataSource = this.dsData;
+            this.postsBindingSource.DataMember = "Posts";
+            this.postsBindingSource.DataSource = this.dsData;
             // 
             // dsData
             // 
@@ -84,8 +86,9 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCategory,
-            this.colPostLink});
+            this.colPostAutoId,
+            this.colPostText,
+            this.colPostPartTypeId});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click to add new";
@@ -95,27 +98,68 @@
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
             this.gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
             this.gridViewMain.RowDeleted += new DevExpress.Data.RowDeletedEventHandler(this.gridViewMain_RowDeleted);
             this.gridViewMain.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridViewMain_RowUpdated);
             // 
-            // colCategory
+            // colPostAutoId
             // 
-            this.colCategory.Caption = "Category Name";
-            this.colCategory.ColumnEdit = this.repositoryItemLookUpEditCategoryItemId;
-            this.colCategory.FieldName = "CategoryItemId";
-            this.colCategory.Name = "colCategory";
-            this.colCategory.Visible = true;
-            this.colCategory.VisibleIndex = 0;
-            this.colCategory.Width = 116;
+            this.colPostAutoId.AppearanceCell.Options.UseTextOptions = true;
+            this.colPostAutoId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPostAutoId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPostAutoId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPostAutoId.Caption = "id";
+            this.colPostAutoId.FieldName = "PostAutoId";
+            this.colPostAutoId.Name = "colPostAutoId";
+            this.colPostAutoId.Visible = true;
+            this.colPostAutoId.VisibleIndex = 0;
             // 
-            // colPostLink
+            // colPostText
             // 
-            this.colPostLink.FieldName = "PostLink";
-            this.colPostLink.Name = "colPostLink";
-            this.colPostLink.Visible = true;
-            this.colPostLink.VisibleIndex = 1;
-            this.colPostLink.Width = 731;
+            this.colPostText.AppearanceCell.Options.UseTextOptions = true;
+            this.colPostText.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPostText.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPostText.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPostText.Caption = "Post Text";
+            this.colPostText.FieldName = "PostText";
+            this.colPostText.Name = "colPostText";
+            this.colPostText.Visible = true;
+            this.colPostText.VisibleIndex = 1;
+            this.colPostText.Width = 212;
+            // 
+            // colPostPartTypeId
+            // 
+            this.colPostPartTypeId.AppearanceCell.Options.UseTextOptions = true;
+            this.colPostPartTypeId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPostPartTypeId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPostPartTypeId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPostPartTypeId.Caption = "Post Type";
+            this.colPostPartTypeId.ColumnEdit = this.repositoryItemLookUpEditPostPartTypeId;
+            this.colPostPartTypeId.FieldName = "PostPartTypeId";
+            this.colPostPartTypeId.Name = "colPostPartTypeId";
+            this.colPostPartTypeId.Visible = true;
+            this.colPostPartTypeId.VisibleIndex = 2;
+            this.colPostPartTypeId.Width = 124;
+            // 
+            // repositoryItemLookUpEditPostPartTypeId
+            // 
+            this.repositoryItemLookUpEditPostPartTypeId.AutoHeight = false;
+            this.repositoryItemLookUpEditPostPartTypeId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditPostPartTypeId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PostPartTypeName", "Name", 111, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditPostPartTypeId.DataSource = this.postPartTypeBindingSource;
+            this.repositoryItemLookUpEditPostPartTypeId.DisplayMember = "PostPartTypeName";
+            this.repositoryItemLookUpEditPostPartTypeId.Name = "repositoryItemLookUpEditPostPartTypeId";
+            this.repositoryItemLookUpEditPostPartTypeId.NullText = "";
+            this.repositoryItemLookUpEditPostPartTypeId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditPostPartTypeId.ValueMember = "PostPartTypeId";
+            // 
+            // postPartTypeBindingSource
+            // 
+            this.postPartTypeBindingSource.DataMember = "PostPartType";
+            this.postPartTypeBindingSource.DataSource = this.dsData;
             // 
             // barManagerMain
             // 
@@ -128,9 +172,10 @@
             this.barManagerMain.DockControls.Add(this.barDockControlRight);
             this.barManagerMain.Form = this;
             this.barManagerMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bbiAddBulk});
+            this.bbiAddBulk,
+            this.bbiEditPostCategory});
             this.barManagerMain.MainMenu = this.bar2;
-            this.barManagerMain.MaxItemId = 1;
+            this.barManagerMain.MaxItemId = 2;
             this.barManagerMain.StatusBar = this.bar3;
             // 
             // bar2
@@ -140,7 +185,8 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiAddBulk)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiAddBulk),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiEditPostCategory)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -154,6 +200,15 @@
             this.bbiAddBulk.Name = "bbiAddBulk";
             this.bbiAddBulk.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbiAddBulk.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAddBulk_ItemClick);
+            // 
+            // bbiEditPostCategory
+            // 
+            this.bbiEditPostCategory.Caption = "Edit selected post\'s category";
+            this.bbiEditPostCategory.Glyph = global::BackpageTools.Properties.Resources.editname_16x16;
+            this.bbiEditPostCategory.Id = 1;
+            this.bbiEditPostCategory.Name = "bbiEditPostCategory";
+            this.bbiEditPostCategory.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiEditPostCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEditPostCategory_ItemClick);
             // 
             // bar3
             // 
@@ -195,34 +250,15 @@
             this.barDockControlRight.Location = new System.Drawing.Point(536, 24);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 326);
             // 
-            // postListTableAdapter
+            // postsTableAdapter
             // 
-            this.postListTableAdapter.ClearBeforeFill = true;
+            this.postsTableAdapter.ClearBeforeFill = true;
             // 
-            // repositoryItemLookUpEditCategoryItemId
+            // postPartTypeTableAdapter
             // 
-            this.repositoryItemLookUpEditCategoryItemId.AutoHeight = false;
-            this.repositoryItemLookUpEditCategoryItemId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditCategoryItemId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CategoryItem", "Category Name", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditCategoryItemId.DataSource = this.categoryItemBindingSource;
-            this.repositoryItemLookUpEditCategoryItemId.DisplayMember = "CategoryItem";
-            this.repositoryItemLookUpEditCategoryItemId.Name = "repositoryItemLookUpEditCategoryItemId";
-            this.repositoryItemLookUpEditCategoryItemId.NullText = "";
-            this.repositoryItemLookUpEditCategoryItemId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditCategoryItemId.ValueMember = "CategoryItemId";
+            this.postPartTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // categoryItemBindingSource
-            // 
-            this.categoryItemBindingSource.DataMember = "CategoryItem";
-            this.categoryItemBindingSource.DataSource = this.dsData;
-            // 
-            // categoryItemTableAdapter
-            // 
-            this.categoryItemTableAdapter.ClearBeforeFill = true;
-            // 
-            // PostListUC
+            // PostEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,15 +267,15 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "PostListUC";
+            this.Name = "PostEditorUC";
             this.Size = new System.Drawing.Size(536, 373);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPostPartTypeId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postPartTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCategoryItemId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,12 +294,14 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private System.Windows.Forms.BindingSource postListBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colCategory;
-        private DevExpress.XtraGrid.Columns.GridColumn colPostLink;
-        private Datasource.dsDataTableAdapters.PostListTableAdapter postListTableAdapter;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditCategoryItemId;
-        private System.Windows.Forms.BindingSource categoryItemBindingSource;
-        private Datasource.dsDataTableAdapters.CategoryItemTableAdapter categoryItemTableAdapter;
+        private System.Windows.Forms.BindingSource postsBindingSource;
+        private Datasource.dsDataTableAdapters.PostsTableAdapter postsTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colPostAutoId;
+        private DevExpress.XtraGrid.Columns.GridColumn colPostText;
+        private DevExpress.XtraGrid.Columns.GridColumn colPostPartTypeId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditPostPartTypeId;
+        private System.Windows.Forms.BindingSource postPartTypeBindingSource;
+        private Datasource.dsDataTableAdapters.PostPartTypeTableAdapter postPartTypeTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem bbiEditPostCategory;
     }
 }

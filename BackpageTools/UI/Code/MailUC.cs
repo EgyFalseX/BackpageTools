@@ -11,25 +11,24 @@ using System.Windows.Forms;
 
 namespace BackpageTools.UI.Code
 {
-    public partial class HeaderUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class MailUC : DevExpress.XtraEditors.XtraUserControl
     {
-        Datasource.dsDataTableAdapters.HeaderCategoryTableAdapter adpHeadCat = new Datasource.dsDataTableAdapters.HeaderCategoryTableAdapter();
-        public HeaderUC()
+        public MailUC()
         {
             InitializeComponent();
             LoadData();
         }
         private void LoadData()
         {
-            headerTableAdapter.Fill(dsData.Header);
+            mailTableAdapter.Fill(dsData.Mail);
         }
-        private void UpdateRow(Datasource.dsData.ProxyRow row)
+        private void UpdateRow(Datasource.dsData.MailRow row)
         {
             try
             {
                 gridViewMain.ShowLoadingPanel();
                 row.EndEdit();
-                int effected = proxyTableAdapter.Update(row);
+                int effected = mailTableAdapter.Update(row);
                 if (effected == 0)
                 {
                     MessageBox.Show("No data saved ...", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -44,39 +43,34 @@ namespace BackpageTools.UI.Code
         }
         private void gridViewMain_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            UpdateRow((Datasource.dsData.ProxyRow)((DataRowView)e.Row).Row);
-
+            UpdateRow((Datasource.dsData.MailRow)((DataRowView)e.Row).Row);
         }
         private void gridViewMain_RowDeleted(object sender, DevExpress.Data.RowDeletedEventArgs e)
         {
-            UpdateRow((Datasource.dsData.ProxyRow)((DataRowView)e.Row).Row);
+            UpdateRow((Datasource.dsData.MailRow)((DataRowView)e.Row).Row);
         }
         private void bbiAddBulk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            dlg.AddListPostDlg dlgFrm = new dlg.AddListPostDlg("");
+            dlg.AddListDlg dlgFrm = new dlg.AddListDlg("You must enter Server:Username:Password");
             if (dlgFrm.ShowDialog() == DialogResult.Cancel)
                 return;
             int EffectedData = 0;
-            foreach (string item in dlgFrm._itemList)
+            foreach (string item in dlgFrm.ItemList)
             {
                 try
                 {
-                    int id = (int)headerTableAdapter.NewId();
-                    EffectedData += headerTableAdapter.Insert(id, item);
-                    if (EffectedData > 0)
+                    string[] cells = item.Split(':');
+                    if (cells.Length < 2)
                     {
-                        foreach (int cat in dlgFrm._cats)
-                            adpHeadCat.Insert(id, cat);
+                        MessageBox.Show("Wrong data formate" + Environment.NewLine + "You must enter Server:Username:Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
+                    EffectedData += mailTableAdapter.Insert(cells[0], cells[1], cells[2]);
                 }
                 catch { }
             }
             LoadData();
             MessageBox.Show("Data added :" + EffectedData, "data saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void repositoryItemButtonEditEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-
         }
 
     }

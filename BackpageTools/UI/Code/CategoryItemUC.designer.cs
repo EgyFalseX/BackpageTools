@@ -1,6 +1,6 @@
 ﻿namespace BackpageTools.UI.Code
 {
-    partial class HeaderUC
+    partial class CategoryItemUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsData = new BackpageTools.Datasource.dsData();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colHeader = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEditEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colCategoryItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bbiAddBulk = new DevExpress.XtraBars.BarButtonItem();
@@ -45,34 +42,32 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.headerTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.HeaderTableAdapter();
+            this.categoryItemTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.CategoryItemTableAdapter();
+            this.colCategoryItemId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.headerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
             // 
-            this.gridControlMain.DataSource = this.headerBindingSource;
+            this.gridControlMain.DataSource = this.categoryItemBindingSource;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.Location = new System.Drawing.Point(0, 24);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
-            this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEditEdit});
             this.gridControlMain.Size = new System.Drawing.Size(536, 326);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
-            // headerBindingSource
+            // categoryItemBindingSource
             // 
-            this.headerBindingSource.DataMember = "Header";
-            this.headerBindingSource.DataSource = this.dsData;
+            this.categoryItemBindingSource.DataMember = "CategoryItem";
+            this.categoryItemBindingSource.DataSource = this.dsData;
             // 
             // dsData
             // 
@@ -82,8 +77,8 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colHeader,
-            this.gridColumn1});
+            this.colCategoryItemId,
+            this.colCategoryItem});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click to add new";
@@ -93,43 +88,22 @@
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
             this.gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
             this.gridViewMain.RowDeleted += new DevExpress.Data.RowDeletedEventHandler(this.gridViewMain_RowDeleted);
             this.gridViewMain.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridViewMain_RowUpdated);
             // 
-            // colHeader
+            // colCategoryItem
             // 
-            this.colHeader.AppearanceCell.Options.UseTextOptions = true;
-            this.colHeader.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colHeader.AppearanceHeader.Options.UseTextOptions = true;
-            this.colHeader.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colHeader.FieldName = "Header";
-            this.colHeader.Name = "colHeader";
-            this.colHeader.Visible = true;
-            this.colHeader.VisibleIndex = 0;
-            this.colHeader.Width = 220;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "Edit";
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditEdit;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            // 
-            // repositoryItemButtonEditEdit
-            // 
-            this.repositoryItemButtonEditEdit.AutoHeight = false;
-            this.repositoryItemButtonEditEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::BackpageTools.Properties.Resources.editname_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.repositoryItemButtonEditEdit.Name = "repositoryItemButtonEditEdit";
-            this.repositoryItemButtonEditEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditEdit_ButtonClick);
+            this.colCategoryItem.AppearanceCell.Options.UseTextOptions = true;
+            this.colCategoryItem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoryItem.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCategoryItem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoryItem.Caption = "Category Name";
+            this.colCategoryItem.FieldName = "CategoryItem";
+            this.colCategoryItem.Name = "colCategoryItem";
+            this.colCategoryItem.Visible = true;
+            this.colCategoryItem.VisibleIndex = 1;
+            this.colCategoryItem.Width = 175;
             // 
             // barManagerMain
             // 
@@ -209,11 +183,24 @@
             this.barDockControlRight.Location = new System.Drawing.Point(536, 24);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 326);
             // 
-            // headerTableAdapter
+            // categoryItemTableAdapter
             // 
-            this.headerTableAdapter.ClearBeforeFill = true;
+            this.categoryItemTableAdapter.ClearBeforeFill = true;
             // 
-            // HeaderUC
+            // colCategoryItemId
+            // 
+            this.colCategoryItemId.AppearanceCell.Options.UseTextOptions = true;
+            this.colCategoryItemId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoryItemId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCategoryItemId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCategoryItemId.Caption = "Id";
+            this.colCategoryItemId.FieldName = "CategoryItemId";
+            this.colCategoryItemId.Name = "colCategoryItemId";
+            this.colCategoryItemId.OptionsColumn.ReadOnly = true;
+            this.colCategoryItemId.Visible = true;
+            this.colCategoryItemId.VisibleIndex = 0;
+            // 
+            // CategoryItemUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,13 +209,12 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "HeaderUC";
+            this.Name = "CategoryItemUC";
             this.Size = new System.Drawing.Size(536, 373);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.headerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -248,10 +234,9 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private System.Windows.Forms.BindingSource headerBindingSource;
-        private Datasource.dsDataTableAdapters.HeaderTableAdapter headerTableAdapter;
-        private DevExpress.XtraGrid.Columns.GridColumn colHeader;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditEdit;
+        private System.Windows.Forms.BindingSource categoryItemBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategoryItem;
+        private Datasource.dsDataTableAdapters.CategoryItemTableAdapter categoryItemTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategoryItemId;
     }
 }

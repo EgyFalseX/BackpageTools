@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddListDlg));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lblInfo = new DevExpress.XtraEditors.LabelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnOk = new DevExpress.XtraEditors.SimpleButton();
             this.tbData = new DevExpress.XtraEditors.MemoEdit();
@@ -37,7 +38,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblInfo = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -62,6 +62,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(470, 261);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.lblInfo.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblInfo.Location = new System.Drawing.Point(12, 12);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(232, 13);
+            this.lblInfo.StyleController = this.layoutControl1;
+            this.lblInfo.TabIndex = 8;
+            this.lblInfo.Text = "You must enter enter between each item";
             // 
             // btnCancel
             // 
@@ -134,17 +145,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // lblInfo
-            // 
-            this.lblInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.lblInfo.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblInfo.Location = new System.Drawing.Point(12, 12);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(232, 13);
-            this.lblInfo.StyleController = this.layoutControl1;
-            this.lblInfo.TabIndex = 8;
-            this.lblInfo.Text = "You must enter enter between each item";
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.lblInfo;
@@ -163,7 +163,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddListDlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add List";
+            this.Text = "Editor";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbData.Properties)).EndInit();

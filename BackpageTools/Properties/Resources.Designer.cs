@@ -83,6 +83,26 @@ namespace BackpageTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alignhorizontaltop_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("alignhorizontaltop_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alignhorizontaltop_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("alignhorizontaltop_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apply_16x16 {
             get {
                 object obj = ResourceManager.GetObject("apply_16x16", resourceCulture);
@@ -126,6 +146,26 @@ namespace BackpageTools.Properties {
         internal static System.Drawing.Bitmap bolocalization_32x32 {
             get {
                 object obj = ResourceManager.GetObject("bolocalization_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bonote_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("bonote_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bonote_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("bonote_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +236,26 @@ namespace BackpageTools.Properties {
         internal static System.Drawing.Bitmap find_16x16 {
             get {
                 object obj = ResourceManager.GetObject("find_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mail_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("mail_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mail_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("mail_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -22,5 +22,6 @@ namespace BackpageTools
             SkinManager.EnableFormSkins();
             Application.Run(new FormMain());
         }
+
     }
 }

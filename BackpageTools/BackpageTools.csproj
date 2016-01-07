@@ -45,6 +45,9 @@
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="ImapX">
+      <HintPath>C:\bin\ImapX\v4.0\ImapX.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\MailImapX.cs" />
+    <Compile Include="Core\Types.cs" />
     <Compile Include="Datasource\dsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,11 +98,23 @@
     <Compile Include="UI\Code\CategoryUC.designer.cs">
       <DependentUpon>CategoryUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Code\HeaderUC.cs">
+    <Compile Include="UI\Code\CategoryItemUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Code\HeaderUC.designer.cs">
-      <DependentUpon>HeaderUC.cs</DependentUpon>
+    <Compile Include="UI\Code\CategoryItemUC.designer.cs">
+      <DependentUpon>CategoryItemUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Code\MailUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Code\MailUC.designer.cs">
+      <DependentUpon>MailUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Code\PostEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Code\PostEditorUC.designer.cs">
+      <DependentUpon>PostEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Code\LoginPostUC.cs">
       <SubType>Form</SubType>
@@ -135,6 +152,12 @@
     <Compile Include="UI\dlg\AddListPostDlg.designer.cs">
       <DependentUpon>AddListPostDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\dlg\AddListCategoryDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\dlg\AddListCategoryDlg.designer.cs">
+      <DependentUpon>AddListCategoryDlg.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,8 +181,14 @@
     <EmbeddedResource Include="UI\Code\CategoryUC.resx">
       <DependentUpon>CategoryUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Code\HeaderUC.resx">
-      <DependentUpon>HeaderUC.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Code\CategoryItemUC.resx">
+      <DependentUpon>CategoryItemUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Code\MailUC.resx">
+      <DependentUpon>MailUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Code\PostEditorUC.resx">
+      <DependentUpon>PostEditorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Code\LoginPostUC.resx">
       <DependentUpon>LoginPostUC.cs</DependentUpon>
@@ -178,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\dlg\AddListPostDlg.resx">
       <DependentUpon>AddListPostDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\dlg\AddListCategoryDlg.resx">
+      <DependentUpon>AddListCategoryDlg.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Datasource\dsData.xsc">
@@ -212,11 +244,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="db.mdb" />
+    <None Include="Resources\mail_32x32.png" />
+    <None Include="Resources\mail_16x16.png" />
+    <None Include="Resources\bonote_32x32.png" />
+    <None Include="Resources\bonote_16x16.png" />
+    <None Include="Resources\alignhorizontaltop_32x32.png" />
+    <None Include="Resources\alignhorizontaltop_16x16.png" />
     <None Include="Resources\editname_16x16.png" />
     <None Include="Resources\boemployee_32x32.png" />
     <None Include="Resources\boemployee_16x16.png" />

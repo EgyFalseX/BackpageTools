@@ -1,6 +1,6 @@
 ﻿namespace BackpageTools.UI.Code
 {
-    partial class PostListUC
+    partial class MailUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.postListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsData = new BackpageTools.Datasource.dsData();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCategory = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPostLink = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bbiAddBulk = new DevExpress.XtraBars.BarButtonItem();
@@ -43,38 +40,30 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.postListTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.PostListTableAdapter();
-            this.repositoryItemLookUpEditCategoryItemId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.categoryItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryItemTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.CategoryItemTableAdapter();
+            this.mailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mailTableAdapter = new BackpageTools.Datasource.dsDataTableAdapters.MailTableAdapter();
+            this.colMailServer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMailUsername = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMailPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCategoryItemId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
             // 
-            this.gridControlMain.DataSource = this.postListBindingSource;
+            this.gridControlMain.DataSource = this.mailBindingSource;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.Location = new System.Drawing.Point(0, 24);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
-            this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditCategoryItemId});
             this.gridControlMain.Size = new System.Drawing.Size(536, 326);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
-            // 
-            // postListBindingSource
-            // 
-            this.postListBindingSource.DataMember = "PostList";
-            this.postListBindingSource.DataSource = this.dsData;
             // 
             // dsData
             // 
@@ -84,8 +73,9 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCategory,
-            this.colPostLink});
+            this.colMailServer,
+            this.colMailUsername,
+            this.colMailPassword});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click to add new";
@@ -98,24 +88,6 @@
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
             this.gridViewMain.RowDeleted += new DevExpress.Data.RowDeletedEventHandler(this.gridViewMain_RowDeleted);
             this.gridViewMain.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridViewMain_RowUpdated);
-            // 
-            // colCategory
-            // 
-            this.colCategory.Caption = "Category Name";
-            this.colCategory.ColumnEdit = this.repositoryItemLookUpEditCategoryItemId;
-            this.colCategory.FieldName = "CategoryItemId";
-            this.colCategory.Name = "colCategory";
-            this.colCategory.Visible = true;
-            this.colCategory.VisibleIndex = 0;
-            this.colCategory.Width = 116;
-            // 
-            // colPostLink
-            // 
-            this.colPostLink.FieldName = "PostLink";
-            this.colPostLink.Name = "colPostLink";
-            this.colPostLink.Visible = true;
-            this.colPostLink.VisibleIndex = 1;
-            this.colPostLink.Width = 731;
             // 
             // barManagerMain
             // 
@@ -195,34 +167,51 @@
             this.barDockControlRight.Location = new System.Drawing.Point(536, 24);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 326);
             // 
-            // postListTableAdapter
+            // mailBindingSource
             // 
-            this.postListTableAdapter.ClearBeforeFill = true;
+            this.mailBindingSource.DataMember = "Mail";
+            this.mailBindingSource.DataSource = this.dsData;
             // 
-            // repositoryItemLookUpEditCategoryItemId
+            // mailTableAdapter
             // 
-            this.repositoryItemLookUpEditCategoryItemId.AutoHeight = false;
-            this.repositoryItemLookUpEditCategoryItemId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditCategoryItemId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CategoryItem", "Category Name", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditCategoryItemId.DataSource = this.categoryItemBindingSource;
-            this.repositoryItemLookUpEditCategoryItemId.DisplayMember = "CategoryItem";
-            this.repositoryItemLookUpEditCategoryItemId.Name = "repositoryItemLookUpEditCategoryItemId";
-            this.repositoryItemLookUpEditCategoryItemId.NullText = "";
-            this.repositoryItemLookUpEditCategoryItemId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditCategoryItemId.ValueMember = "CategoryItemId";
+            this.mailTableAdapter.ClearBeforeFill = true;
             // 
-            // categoryItemBindingSource
+            // colMailServer
             // 
-            this.categoryItemBindingSource.DataMember = "CategoryItem";
-            this.categoryItemBindingSource.DataSource = this.dsData;
+            this.colMailServer.AppearanceCell.Options.UseTextOptions = true;
+            this.colMailServer.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMailServer.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMailServer.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMailServer.FieldName = "MailServer";
+            this.colMailServer.Name = "colMailServer";
+            this.colMailServer.Visible = true;
+            this.colMailServer.VisibleIndex = 0;
             // 
-            // categoryItemTableAdapter
+            // colMailUsername
             // 
-            this.categoryItemTableAdapter.ClearBeforeFill = true;
+            this.colMailUsername.AppearanceCell.Options.UseTextOptions = true;
+            this.colMailUsername.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMailUsername.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMailUsername.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMailUsername.FieldName = "MailUsername";
+            this.colMailUsername.Name = "colMailUsername";
+            this.colMailUsername.Visible = true;
+            this.colMailUsername.VisibleIndex = 1;
+            this.colMailUsername.Width = 89;
             // 
-            // PostListUC
+            // colMailPassword
+            // 
+            this.colMailPassword.AppearanceCell.Options.UseTextOptions = true;
+            this.colMailPassword.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMailPassword.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMailPassword.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMailPassword.FieldName = "MailPassword";
+            this.colMailPassword.Name = "colMailPassword";
+            this.colMailPassword.Visible = true;
+            this.colMailPassword.VisibleIndex = 2;
+            this.colMailPassword.Width = 87;
+            // 
+            // MailUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,15 +220,13 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "PostListUC";
+            this.Name = "MailUC";
             this.Size = new System.Drawing.Size(536, 373);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCategoryItemId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,12 +245,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private System.Windows.Forms.BindingSource postListBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colCategory;
-        private DevExpress.XtraGrid.Columns.GridColumn colPostLink;
-        private Datasource.dsDataTableAdapters.PostListTableAdapter postListTableAdapter;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditCategoryItemId;
-        private System.Windows.Forms.BindingSource categoryItemBindingSource;
-        private Datasource.dsDataTableAdapters.CategoryItemTableAdapter categoryItemTableAdapter;
+        private System.Windows.Forms.BindingSource mailBindingSource;
+        private Datasource.dsDataTableAdapters.MailTableAdapter mailTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colMailServer;
+        private DevExpress.XtraGrid.Columns.GridColumn colMailUsername;
+        private DevExpress.XtraGrid.Columns.GridColumn colMailPassword;
     }
 }

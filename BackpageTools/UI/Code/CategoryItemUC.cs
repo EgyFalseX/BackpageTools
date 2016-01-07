@@ -11,25 +11,25 @@ using System.Windows.Forms;
 
 namespace BackpageTools.UI.Code
 {
-    public partial class PostListUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class CategoryItemUC : DevExpress.XtraEditors.XtraUserControl
     {
-        public PostListUC()
+
+        public CategoryItemUC()
         {
             InitializeComponent();
-            categoryItemTableAdapter.Fill(dsData.CategoryItem);
             LoadData();
         }
         private void LoadData()
         {
-            postListTableAdapter.Fill(dsData.PostList);
+            categoryItemTableAdapter.Fill(dsData.CategoryItem);
         }
-        private void UpdateRow(Datasource.dsData.PostListRow row)
+        private void UpdateRow(Datasource.dsData.CategoryItemRow row)
         {
             try
             {
                 gridViewMain.ShowLoadingPanel();
                 row.EndEdit();
-                int effected = postListTableAdapter.Update(row);
+                int effected = categoryItemTableAdapter.Update(row);
                 if (effected == 0)
                 {
                     MessageBox.Show("No data saved ...", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -44,15 +44,15 @@ namespace BackpageTools.UI.Code
         }
         private void gridViewMain_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            UpdateRow((Datasource.dsData.PostListRow)((DataRowView)e.Row).Row);
+            UpdateRow((Datasource.dsData.CategoryItemRow)((DataRowView)e.Row).Row);
         }
         private void gridViewMain_RowDeleted(object sender, DevExpress.Data.RowDeletedEventArgs e)
         {
-            UpdateRow((Datasource.dsData.PostListRow)((DataRowView)e.Row).Row);
+            UpdateRow((Datasource.dsData.CategoryItemRow)((DataRowView)e.Row).Row);
         }
         private void bbiAddBulk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            dlg.AddListDlg dlgFrm = new dlg.AddListDlg("You must enter categoryId:link");
+            dlg.AddListDlg dlgFrm = new dlg.AddListDlg("You must enter Catogry followed by Enter");
             if (dlgFrm.ShowDialog() == DialogResult.Cancel)
                 return;
             int EffectedData = 0;
@@ -60,18 +60,13 @@ namespace BackpageTools.UI.Code
             {
                 try
                 {
-                    string[] cells = item.Split(':');
-                    if (cells.Length < 2)
-                    {
-                        MessageBox.Show("Wrong data formate" + Environment.NewLine + "You must enter categoryId:link", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    EffectedData += postListTableAdapter.Insert(cells[1], Convert.ToInt32(cells[0]));
+                    EffectedData += categoryItemTableAdapter.Insert(item);
                 }
                 catch { }
             }
             LoadData();
             MessageBox.Show("Data added :" + EffectedData, "data saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
     }
 }
